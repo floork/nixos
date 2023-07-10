@@ -2,58 +2,138 @@
 
 {
   imports =
-    [
-      # Include the hardware configuration.
+    [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/sda";
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "myhostname";
+  networking.hostName = "nixos"; # Define your hostname.
 
-  # Set the system language to English (USA).
-  i18n = {
-    consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "us";
-    defaultLocale = "en_US.UTF-8";
-    enable = true;
-    extraLocaleSettings = ''
-      LC_TIME="en_US.UTF-8"
-    '';
+  # Configure network proxy if necessary.
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable networking.
+  networking.networkmanager.enable = true;
+
+  # Set your time zone.
+  time.timeZone = "Europe/Berlin";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "de_DE.UTF-8";
+    LC_IDENTIFICATION = "de_DE.UTF-8";
+    LC_MEASUREMENT = "de_DE.UTF-8";
+    LC_MONETARY = "de_DE.UTF-8";
+    LC_NAME = "de_DE.UTF-8";
+    LC_NUMERIC = "de_DE.UTF-8";
+    LC_PAPER = "de_DE.UTF-8";
+    LC_TELEPHONE = "de_DE.UTF-8";
+    LC_TIME = "de_DE.UTF-8";
   };
 
-  # Set the keyboard layout to German.
-  console = {
-    keyMap = "de";
-    font = "Lat2-Terminus16";
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+  # services.xserver.setxkbmapOptions = "us";
+
+  # Enable i3 window manager.
+  services.xserver.windowManager.i3.enable = true;
+
+  services.xserver.windowManager.i3.extraPackages = [ pkgs.xorg.setxkbmap ];
+  # services.xserver.windowManager.i3.extraConfig = ''
+  #   # Set your keymap here
+  #   exec --no-startup-id setxkbmap -layout us
+  # '';
+
+
+  # Configure keymap in X11.
+  services.xserver.xkbVariant = "";
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.floork = {
+    isNormalUser = true;
+    description = "floork";
+    extraGroups = [ "networkmanager" "wheel" ];
+    home = "/home/floork";
+    shell = pkgs.fish;
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.floork = import ./home.nix;
   };
 
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
-  # Set up user accounts.
-  users.users = {
-    floork = {
-      isNormalUser = true;
-      uid = 1000;
-      home = "/home/floork";
-      description = "Floork User";
-      extraGroups = [ "wheel" "networkmanager" ];
-      password = "mypassword";  # Replace with the actual password.
-    };
-  };
-
-  # Enable sudo for users in the wheel group.
-  security.sudo.wheelNeedsPassword = false;
-  
-  # Additional system configuration options go here.
-
-  # Example: Install additional packages.
+  # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    # List additional packages here
-    nano
+    i3
+    i3status
+    dmenu
+    terminator
+    networkmanagerapplet
+    git
+    vim
+    wget
+    pkgs.starship
+    fish
+    curl
+    exa
+    neofetch
+    util-linux
     htop
-    ];
+  ];
+
+  fonts.fonts = with pkgs; [
+    fira-code
+    fira-code-symbols
+    meslo-lg
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+  ];
+
+  # services.flatpak.enable = true;
+
+  # Enable Fish as the default shell.
+  programs.fish.enable = true;
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable.
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g., man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "23.05"; # Did you read the comment?
 }
