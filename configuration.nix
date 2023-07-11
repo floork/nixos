@@ -87,6 +87,7 @@
     neofetch
     util-linux
     htop
+    gh
   ];
 
   fonts.fonts = with pkgs; [
