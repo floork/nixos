@@ -35,6 +35,7 @@ in
     pkgs.noto-fonts
     pkgs.noto-fonts-cjk
     pkgs.noto-fonts-emoji
+    pkgs.firefox
   ];
 
   fonts.fontconfig.enable = true;

@@ -1,11 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      <home-manager/nixos>
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    <home-manager/nixos>
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -38,22 +37,24 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  # services.xserver.setxkbmapOptions = "us";
+  environment.pathsToLink = [ "/libexec" ];
 
-  # Enable i3 window manager.
-  services.xserver.windowManager.i3.enable = true;
+  services.xserver = {
+    enable = true;
 
-  services.xserver.windowManager.i3.extraPackages = [ pkgs.xorg.setxkbmap ];
-  # services.xserver.windowManager.i3.extraConfig = ''
-  #   # Set your keymap here
-  #   exec --no-startup-id setxkbmap -layout us
-  # '';
+    desktopManager = { xterm.enable = false; };
+    displayManager = { defaultSession = "none+i3"; };
 
-
-  # Configure keymap in X11.
-  services.xserver.xkbVariant = "";
+  windowManager.i3 = {
+    enable = true;
+    extraPackages = with pkgs; [
+      dmenu # application launcher most people use
+      i3status # gives you the default i3 status bar
+      i3lock # default i3 screen locker
+      i3blocks # if you are planning on using i3blocks over i3status
+    ];
+  };
+};
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.floork = {
@@ -75,15 +76,11 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    i3
-    i3status
-    dmenu
-    terminator
     networkmanagerapplet
     git
     vim
     wget
-    pkgs.starship
+    starship
     fish
     curl
     exa
