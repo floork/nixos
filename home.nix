@@ -7,43 +7,59 @@ let
   starshipConfig = import ./modules/starship.nix { inherit config pkgs; };
   neofetchConfig = import ./modules/neofetch.nix { inherit config pkgs; };
   kittyConfig = import ./modules/kitty.nix { inherit config pkgs; };
-in
+  i3Config = import ./modules/i3.nix { inherit config pkgs; };
+  gitConfig = import ./modules/git.nix { inherit config pkgs; };
 
-{
+in {
   home.username = "floork";
   home.homeDirectory = "/home/floork";
   home.stateVersion = "23.05";
 
-  home.packages = [
-    pkgs.flatpak
-    pkgs.kitty
-    pkgs.gparted
-    pkgs.discord
-    pkgs.spotify
-    pkgs.bottles
-    pkgs.steam
-    pkgs.vscode
-    pkgs.lutris
-    pkgs.thunderbird
-    pkgs.qbittorrent
-    pkgs.neofetch
-    pkgs.zsh-autosuggestions
-    pkgs.zsh-syntax-highlighting
-    pkgs.fira-code
-    pkgs.fira-code-symbols
-    pkgs.meslo-lg
-    pkgs.noto-fonts
-    pkgs.noto-fonts-cjk
-    pkgs.noto-fonts-emoji
-    pkgs.firefox
+  home.packages = with pkgs; [
+    flatpak
+    kitty
+    gparted
+    discord
+    spotify
+    bottles
+    steam
+    vscode
+    lutris
+    thunderbird
+    qbittorrent
+    neofetch
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    fira-code
+    fira-code-symbols
+    meslo-lg
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    firefox
+    gimp
+    variety
+    notion-app-enhanced
   ];
 
   fonts.fontconfig.enable = true;
 
-  programs.bash = bashConfig;
-  programs.fish = fishConfig;
-  programs.zsh = zshConfig;
-  programs.starship = starshipConfig;
-  home.file.".config/kitty/kitty.conf" = kittyConfig;
-  home.file.".config/neofetch/config.conf" = neofetchConfig;
+  programs = {
+    bash = bashConfig;
+    fish = fishConfig;
+    zsh = zshConfig;
+    starship = starshipConfig;
+    git = gitConfig;
+  };
+
+  home.file = {
+    ".config/kitty/kitty.conf" = kittyConfig;
+    ".config/neofetch/config.conf" = neofetchConfig;
+    ".config/i3/config" = i3Config;
+    ".config/rofi/config.rasi" = {
+      text = ''
+        @theme "/nix/store/gsya3v0afklrwkcxv4drzkdw5npvpcfa-rofi-1.7.5/share/rofi/themes/arthur.rasi"
+      '';
+    };
+  };
 }

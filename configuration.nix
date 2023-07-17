@@ -56,11 +56,13 @@
   };
 };
 
+services.picom.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.floork = {
     isNormalUser = true;
     description = "floork";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     home = "/home/floork";
     shell = pkgs.fish;
   };
@@ -88,6 +90,17 @@
     util-linux
     htop
     gh
+    rofi
+    xfce.thunar
+    betterlockscreen
+    dunst
+    libnotify
+    vscode
+    killall
+    bluez
+    bluez-tools
+    blueman
+    pipewire
   ];
 
   fonts.fonts = with pkgs; [
@@ -103,7 +116,30 @@
     proggyfonts
   ];
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.package = pkgs.bluez;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
+  environment.etc = {
+	"wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+		bluez_monitor.properties = {
+			["bluez5.enable-sbc-xq"] = true,
+			["bluez5.enable-msbc"] = true,
+			["bluez5.enable-hw-volume"] = true,
+			["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+		}
+	'';
+};
+
   # services.flatpak.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # Enable Fish as the default shell.
   programs.fish.enable = true;
@@ -127,11 +163,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g., man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  # services.home-manager-auto-upgrade = true;
+  system.autoUpgrade.enable = true;
+  system.stateVersion = "23.05";
 }
