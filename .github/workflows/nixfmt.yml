@@ -16,8 +16,8 @@ jobs:
       - name: Install Nix
         run: curl -L https://nixos.org/nix/install | sh
 
+      - name: Install nixfmt
+        run: nix-env -iA nixpkgs.nixUnstable
+
       - name: Format .nix files
-        run: |
-          source $HOME/.nix-profile/etc/profile.d/nix.sh
-          nix-env -iA nixpkgs.nixUnstable
-          nixfmt $(git ls-files '*.nix')
+        run: nixfmt $(git ls-files '*.nix')
