@@ -187,21 +187,7 @@
     # start a terminal
     bindsym $mod+Return exec kitty
 
-
-    set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-    mode "$mode_system" {
-        bindsym l exec --no-startup-id i3exit lock, mode "default"
-        bindsym e exec --no-startup-id i3exit logout, mode "default"
-        bindsym s exec --no-startup-id i3exit suspend, mode "default"
-        bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-        bindsym r exec --no-startup-id i3exit reboot, mode "default"
-        bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-    }
-    bindsym $mod+p mode "$mode_system"
+    #bindsym $mod+p mode "$mode_system"
 
     # kill focused window
     bindsym $mod+q kill
@@ -217,6 +203,7 @@
     bindsym $mod+z exec thunderbird
     bindsym $mod+b exec firefox
     bindsym $mod+n exec notion-app-enhanced
+    bindsym $mod+p exec bash ~/.config/i3/powermenu.sh
 
     # Startup programs
     exec_always --no-startup-id ~/.scripts/monitors.sh

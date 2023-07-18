@@ -10,6 +10,12 @@ let
   i3Config = import ./modules/i3.nix { inherit config pkgs; };
   gitConfig = import ./modules/git.nix { inherit config pkgs; };
 
+  # Install GNOME Keyring and its dependencies
+  gnomeKeyringPkgs = pkgs.buildEnv {
+    name = "gnome-keyring-packages";
+    paths = [ pkgs.gnome3.gnome-keyring ];
+  };
+
 in {
   home.username = "floork";
   home.homeDirectory = "/home/floork";
@@ -40,6 +46,7 @@ in {
     gimp
     variety
     notion-app-enhanced
+    gnomeKeyringPkgs
   ];
 
   fonts.fontconfig.enable = true;
@@ -60,6 +67,10 @@ in {
       text = ''
         @theme "/nix/store/gsya3v0afklrwkcxv4drzkdw5npvpcfa-rofi-1.7.5/share/rofi/themes/arthur.rasi"
       '';
+    };
+    "modules/powermenu.sh" = {
+      source = "/etc/nixos/modules/powermenu.sh";
+      target = "${config.home.homeDirectory}/.config/i3/powermenu.sh";
     };
   };
 }
