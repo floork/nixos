@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
-let
-  aliasConfig = import /etc/nixos/modules/alias.nix;
-in
-{
+let aliasConfig = import /etc/nixos/modules/alias.nix;
+in {
   enable = true;
 
   package = pkgs.fish;
