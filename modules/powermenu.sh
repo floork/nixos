@@ -13,22 +13,22 @@ selected_option=$(printf '%s\n' "${options[@]}" | "$rofi_path" -dmenu -p "Power 
 # Handle the selected option
 case "$selected_option" in
   "Lock")
-    i3exit lock
+    i3-msg exec "i3lock"
     ;;
   "Logout")
-    i3exit logout
+    i3-msg exit
     ;;
   "Suspend")
-    i3exit suspend
+    i3-msg exec "systemctl suspend"
     ;;
   "Hibernate")
-    i3exit hibernate
+    i3-msg exec "systemctl hibernate"
     ;;
   "Reboot")
-    i3exit reboot
+    i3-msg exec "systemctl reboot"
     ;;
   "Shutdown")
-    i3exit shutdown
+    i3-msg exec "systemctl poweroff"
     ;;
   *)
     echo "Invalid option"
