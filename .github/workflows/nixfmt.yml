@@ -18,7 +18,10 @@ jobs:
         uses: cachix/install-nix-action@v13
 
       - name: Install nixfmt
-        run: nix-env -iA nixpkgs.nixfmt
+        run: nix-shell -p nixpkgs.nixfmt --run "cp $(which nixfmt) $HOME/bin"
+
+      - name: Add $HOME/bin to PATH
+        run: echo "::add-path::$HOME/bin"
 
       - name: Format Nix files
         run: nixfmt -w .
