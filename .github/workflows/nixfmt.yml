@@ -8,17 +8,20 @@ on:
 jobs:
   format:
     name: Format Nix files
-    runs-on: ubuntu-latest
+    runs-on: arch-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Nix
-        uses: cachix/install-nix-action@v13
+      - name: Install yay
+        run: |
+          git clone https://aur.archlinux.org/yay.git
+          cd yay
+          makepkg -si
 
-      - name: Install nixfmt
-        run: nix-env -f https://github.com/nixos/nixpkgs/archive/21.05.tar.gz -iA nixpkgs.nixfmt
+      - name: Install nixfmt with AUR support
+        run: yay -S --noconfirm nixfmt
 
       - name: Format Nix files
         run: nixfmt -w .
