@@ -1,0 +1,23 @@
+name: Nix Formatting
+
+on:
+  push:
+    branches:
+      - main  # Adjust this branch name if necessary
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Nix
+        run: curl -L https://nixos.org/nix/install | sh
+
+      - name: Format .nix files
+        run: |
+          source $HOME/.nix-profile/etc/profile.d/nix.sh
+          nix-env -iA nixpkgs.nixUnstable
+          nixfmt $(git ls-files '*.nix')
