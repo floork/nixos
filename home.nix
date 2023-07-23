@@ -21,6 +21,10 @@ in {
   home.homeDirectory = "/home/floork";
   home.stateVersion = "23.05";
 
+  home.sessionVariables = { EDITOR = "vim"; };
+
+  # environment.cursor.theme = "/path/to/cursor/themes/MyCursorTheme";
+
   home.packages = with pkgs; [
     flatpak
     kitty
@@ -47,6 +51,10 @@ in {
     variety
     notion-app-enhanced
     gnomeKeyringPkgs
+    obsidian
+    insync
+    libsForQt5.kruler
+    nixfmt
   ];
 
   fonts.fontconfig.enable = true;
@@ -73,4 +81,5 @@ in {
       target = "${config.home.homeDirectory}/.config/i3/powermenu.sh";
     };
   };
+
 }

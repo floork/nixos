@@ -184,6 +184,8 @@
             status_command i3status
     }
 
+    for_window [class="kruler"] floating enable
+
     # start a terminal
     bindsym $mod+Return exec kitty
 
@@ -204,11 +206,11 @@
     bindsym $mod+b exec firefox
     bindsym $mod+n exec notion-app-enhanced
     bindsym $mod+p exec bash ~/.config/i3/powermenu.sh
+    bindsym $mod+r exec kruler
 
     # Startup programs
-    exec_always --no-startup-id ~/.scripts/monitors.sh
-    exec_always --no-startup-id ~/.scripts/wallpapers.sh
-    exec --no-startup-id picom --config ~/.config/picom/picom.conf
+    exec_always --no-startup-id xrandr - -output primary - -mode 1920 x1080 - -pos 0 x0 - -rotate normal - -output DP-4 - -mode 1920 x1080 - -pos 1920 x0 - -rotate normal
+    exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
     exec --no-startup-id variety
     exec --no-startup-id discord
     exec --no-startup-id spotify
