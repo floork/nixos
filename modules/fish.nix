@@ -29,6 +29,8 @@ in {
       end
     end
 
+    set -gx OPENSSL_PATH (whereis openssl | awk '{print $2}')
+    set -x PKG_CONFIG_PATH (pkg-config --variable=libdir openssl)
     set -gx PATH "$HOME/.cargo/bin" $PATH
 
     set fish_greeting ""

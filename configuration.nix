@@ -102,6 +102,12 @@
     bluez-tools
     blueman
     pipewire
+    nixfmt
+    rustup
+    gcc
+    pkgconfig
+    openssl
+    libiconv
   ];
 
   fonts.fonts = with pkgs; [
