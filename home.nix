@@ -55,6 +55,7 @@ in {
     insync
     libsForQt5.kruler
     nixfmt
+    rustup
   ];
 
   fonts.fontconfig.enable = true;
