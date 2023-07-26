@@ -29,8 +29,13 @@ in {
       end
     end
 
-    set -gx OPENSSL_PATH (whereis openssl | awk '{print $2}')
-    set -x PKG_CONFIG_PATH (pkg-config --variable=libdir openssl)
+    set openssl_path (find /nix/store -name openssl.pc -print -quit | xargs dirname)
+
+    # Set the PKG_CONFIG_PATH variable
+    if test -n "$openssl_path"
+        set -gx PKG_CONFIG_PATH $openssl_path
+    end
+
     set -gx PATH "$HOME/.cargo/bin" $PATH
 
     set fish_greeting ""

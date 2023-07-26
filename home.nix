@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 let
-  bashConfig = import ./modules/bash.nix { inherit config pkgs; };
   fishConfig = import ./modules/fish.nix { inherit config pkgs; };
   zshConfig = import ./modules/zsh.nix { inherit config pkgs; };
   starshipConfig = import ./modules/starship.nix { inherit config pkgs; };
@@ -59,7 +58,6 @@ in {
   fonts.fontconfig.enable = true;
 
   programs = {
-    bash = bashConfig;
     fish = fishConfig;
     zsh = zshConfig;
     starship = starshipConfig;
@@ -78,6 +76,10 @@ in {
     "modules/powermenu.sh" = {
       source = "/etc/nixos/modules/powermenu.sh";
       target = "${config.home.homeDirectory}/.config/i3/powermenu.sh";
+    };
+    "modules/bashrc" = {
+      source = "/etc/nixos/modules/bashrc";
+      target = "${config.home.homeDirectory}/.bashrc";
     };
   };
 
