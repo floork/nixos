@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
-
-{
+let
+  myOpenssl = pkgs.openssl.overrideAttrs (oldAttrs: {
+    buildFlags = (oldAttrs.buildFlags or [ ]) ++ [ "-some-custom-flag" ];
+  });
+in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     <home-manager/nixos>
@@ -106,8 +109,9 @@
     rustup
     gcc
     pkgconfig
-    openssl
+    myOpenssl
     libiconv
+    arandr
   ];
 
   fonts.fonts = with pkgs; [
