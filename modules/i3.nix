@@ -209,12 +209,11 @@
     bindsym $mod+r exec kruler
 
     # Startup programs
-    exec_always --no-startup-id xrandr - -output primary - -mode 1920 x1080 - -pos 0 x0 - -rotate normal - -output DP-4 - -mode 1920 x1080 - -pos 1920 x0 - -rotate normal
+    exec_always --no-startup-id /etc/nixos/scripts/default.sh
     exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
     exec --no-startup-id variety
     exec --no-startup-id discord
     exec --no-startup-id spotify
     exec --no-startup-id notify-send "Welcome back $USER!"
-
   '';
 }
