@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
-let
-  myOpenssl = pkgs.openssl.overrideAttrs (oldAttrs: {
-    buildFlags = (oldAttrs.buildFlags or [ ]) ++ [ "-some-custom-flag" ];
-  });
-in {
+
+{
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     <home-manager/nixos>
@@ -109,10 +106,17 @@ in {
     rustup
     gcc
     pkgconfig
-    myOpenssl
+    pkg-config
+    openssl
+    openssl.dev
     libiconv
     arandr
   ];
+
+  environment.sessionVariables = rec {
+    OPENSSL_DIR = pkgs.openssl.dev;
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+  };
 
   fonts.fonts = with pkgs; [
     fira-code
