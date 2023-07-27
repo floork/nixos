@@ -115,6 +115,7 @@
     docker
     sqlite
     python3
+    sqlitebrowser
   ];
 
   environment.sessionVariables = rec {
