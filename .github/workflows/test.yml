@@ -8,8 +8,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install nixfmt
-      run: nix-env -iA nixpkgs.nixfmt
+    - name: Install Nix
+      run: curl -L https://nixos.org/nix/install | sh
+      # Note: The above command will install Nix, you can also use nix action for more control over Nix installation.
 
     - name: Run nixfmt
-      run: nixfmt --recursive
+      run: nix-shell -p nixpkgs.nixfmt --run "nixfmt --recursive"
