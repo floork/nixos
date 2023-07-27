@@ -63,7 +63,7 @@
   users.users.floork = {
     isNormalUser = true;
     description = "floork";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
     home = "/home/floork";
     shell = pkgs.fish;
   };
@@ -112,10 +112,21 @@
     openssl.dev
     libiconv
     arandr
+    docker
+    sqlite
+    python3
   ];
 
   environment.sessionVariables = rec {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+  };
+
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
   };
 
   fonts.fonts = with pkgs; [
