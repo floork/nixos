@@ -5,29 +5,29 @@ coreutils_path="/path/to/coreutils"
 rofi_path=$(whereis -b rofi | awk '{print $2}')
 
 # Define the options for the power menu
-options=("lock" "logout" "suspend" "hibernate" "reboot" "shutdown")
+options=("Lock" "Logout" "Suspend" "Hibernate" "Reboot" "Shutdown")
 
 # Prompt the user to select an option
 selected_option=$(printf '%s\n' "${options[@]}" | "$rofi_path" -dmenu -p "Power Menu:")
 
 # Handle the selected option
 case "$selected_option" in
-  "lock")
+  "Lock")
     i3-msg exec "i3lock"
     ;;
-  "logout")
+  "Logout")
     i3-msg exit
     ;;
-  "suspend")
+  "Suspend")
     i3-msg exec "systemctl suspend"
     ;;
-  "hibernate")
+  "Hibernate")
     i3-msg exec "systemctl hibernate"
     ;;
-  "reboot")
+  "Reboot")
     i3-msg exec "systemctl reboot"
     ;;
-  "shutdown")
+  "Shutdown")
     i3-msg exec "systemctl poweroff"
     ;;
   *)
