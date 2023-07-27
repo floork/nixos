@@ -4,11 +4,12 @@ on:
   push:
 jobs:
   format:
-    runs-on: ubuntu-latest
+    runs-on: nixos/nix
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install and format with nixfmt
-      run: |
-        curl -L https://nixos.org/nix/install | sh
-        nix-shell -p nixpkgs.nixfmt --run "nixfmt --recursive"
+    - name: Install nixfmt
+      run: nix-env -i nixpkgs-fmt
+      
+    - name: run nixfmt
+      run: nixpkgs-fmt .
