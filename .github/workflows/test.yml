@@ -10,7 +10,10 @@ jobs:
 
     - name: Install Nix
       run: curl -L https://nixos.org/nix/install | sh
-      # Note: The above command will install Nix, you can also use nix action for more control over Nix installation.
+
+    - name: Set up Nix
+      run: echo ". /home/runner/.nix-profile/etc/profile.d/nix.sh" >> $GITHUB_ENV
 
     - name: Run nixfmt
-      run: nix-shell -p nixpkgs.nixfmt --run "nixfmt --recursive"
+      run: nix-env -iA nixpkgs.nixfmt --file '<nixpkgs>'
+          && $HOME/.nix-profile/bin/nixfmt --recursive
