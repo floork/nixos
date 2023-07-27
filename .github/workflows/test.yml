@@ -12,7 +12,7 @@ jobs:
       run: curl -L https://nixos.org/nix/install | sh
 
     - name: Set up Nix
-      run: echo ". /home/runner/.nix-profile/etc/profile.d/nix.sh" >> $GITHUB_ENV
+      run: source /home/runner/.nix-profile/etc/profile.d/nix.sh
 
     - name: Run nixfmt
       run: nix-env -iA nixpkgs.nixfmt --file '<nixpkgs>'
