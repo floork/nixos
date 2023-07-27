@@ -8,12 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install Nix
-      run: curl -L https://nixos.org/nix/install | sh
-
-    - name: Set up Nix
-      run: source /home/runner/.nix-profile/etc/profile.d/nix.sh
-
-    - name: Run nixfmt
-      run: nix-env -iA nixpkgs.nixfmt --file '<nixpkgs>'
-          && $HOME/.nix-profile/bin/nixfmt --recursive
+    - name: Install and format with nixfmt
+      run: |
+        curl -L https://nixos.org/nix/install | sh
+        nix-shell -p nixpkgs.nixfmt --run "nixfmt --recursive"
