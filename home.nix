@@ -53,6 +53,7 @@ in {
     obsidian
     insync
     libsForQt5.kruler
+    obs-studio
   ];
 
   fonts.fontconfig.enable = true;
