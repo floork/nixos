@@ -116,6 +116,7 @@
     sqlite
     python3
     sqlitebrowser
+    nodejs
   ];
 
   environment.sessionVariables = rec {
