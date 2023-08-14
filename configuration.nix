@@ -41,6 +41,8 @@
 
   services.xserver = {
     enable = true;
+    layout = "us";
+    xkbOptions = "caps:f13";
 
     desktopManager = { xterm.enable = false; };
     displayManager = { defaultSession = "none+i3"; };
@@ -76,48 +78,6 @@
 
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile.
-  environment.systemPackages = with pkgs; [
-    networkmanagerapplet
-    git
-    vim
-    wget
-    starship
-    fish
-    curl
-    exa
-    neofetch
-    util-linux
-    htop
-    vscode
-    gh
-    rofi
-    xfce.thunar
-    betterlockscreen
-    dunst
-    libnotify
-    vscode
-    killall
-    bluez
-    bluez-tools
-    blueman
-    pipewire
-    nixfmt
-    rustup
-    gcc
-    pkgconfig
-    pkg-config
-    openssl
-    openssl.dev
-    libiconv
-    arandr
-    docker
-    sqlite
-    python3
-    mysql-workbench
-    nodejs
-  ];
 
   environment.sessionVariables = rec {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";

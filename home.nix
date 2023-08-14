@@ -54,6 +54,45 @@ in {
     insync
     libsForQt5.kruler
     obs-studio
+    remmina
+    networkmanagerapplet
+    git
+    vim
+    wget
+    starship
+    fish
+    curl
+    exa
+    neofetch
+    util-linux
+    htop
+    gh
+    rofi
+    xfce.thunar
+    betterlockscreen
+    dunst
+    libnotify
+    vscode
+    killall
+    bluez
+    bluez-tools
+    blueman
+    pipewire
+    nixfmt
+    rustup
+    gcc
+    pkgconfig
+    pkg-config
+    openssl
+    openssl.dev
+    libiconv
+    arandr
+    docker
+    sqlite
+    python3
+    mysql-workbench
+    nodejs
+    minecraft
   ];
 
   fonts.fontconfig.enable = true;
