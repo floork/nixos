@@ -115,7 +115,7 @@
     docker
     sqlite
     python3
-    sqlitebrowser
+    mysql-workbench
     nodejs
   ];
 
