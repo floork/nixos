@@ -92,7 +92,6 @@ in {
     python3
     mysql-workbench
     nodejs
-    minecraft
   ];
 
   fonts.fontconfig.enable = true;
