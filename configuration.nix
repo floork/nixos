@@ -131,19 +131,6 @@
     };
   };
 
-  fonts.fonts = with pkgs; [
-    fira-code
-    fira-code-symbols
-    meslo-lg
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
-  ];
-
   hardware.bluetooth.enable = true;
   hardware.bluetooth.package = pkgs.bluez;
 
