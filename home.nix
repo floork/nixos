@@ -93,6 +93,7 @@ in {
     mysql-workbench
     nodejs
     peek
+    kooha
   ];
 
   fonts.fontconfig.enable = true;
