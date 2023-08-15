@@ -207,6 +207,7 @@
     bindsym $mod+n exec notion-app-enhanced
     bindsym $mod+p exec bash ~/.config/i3/powermenu.sh
     bindsym $mod+r exec kruler
+    bindsym $mod+Ctrl+r exec peek
 
     # Startup programs
     exec_always --no-startup-id /etc/nixos/scripts/default.sh

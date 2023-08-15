@@ -92,6 +92,7 @@ in {
     python3
     mysql-workbench
     nodejs
+    peek
   ];
 
   fonts.fontconfig.enable = true;
