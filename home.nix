@@ -92,6 +92,14 @@ in {
     python3
     mysql-workbench
     nodejs
+    dmidecode
+    inxi
+    hwinfo
+    hardinfo
+    lshw
+    cpu-x
+    openrgb
+    prismlauncher
   ];
 
   fonts.fontconfig.enable = true;
