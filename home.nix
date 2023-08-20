@@ -100,6 +100,8 @@ in {
     cpu-x
     openrgb
     prismlauncher
+    peek
+    kooha
   ];
 
   fonts.fontconfig.enable = true;
