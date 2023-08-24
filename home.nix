@@ -102,6 +102,8 @@ in {
     prismlauncher
     peek
     kooha
+    gnupg
+    yubikey-manager-qt
   ];
 
   fonts.fontconfig.enable = true;
