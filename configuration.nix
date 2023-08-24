@@ -114,6 +114,12 @@
   # Enable Fish as the default shell.
   programs.fish.enable = true;
 
+  nix.gc = {
+    automatic = true; # Enable automatic garbage collection.
+    dates = "weekly"; # Specify the schedule for garbage collection.
+    options = "--delete-older-than 7d"; # Delete builds older than 7 days.
+  };
+
   system.autoUpgrade.enable = true;
   system.stateVersion = "23.05";
 }
