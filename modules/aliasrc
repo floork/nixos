@@ -52,7 +52,7 @@ alias aliasrc='vim ~/.alias/aliasrc' # Quick access to this file
 
 alias nixrc='vim /etc/nixos/configuration.nix' # Quick access to the nixos configuration file
 alias homerc='vim /etc/nixos/home.nix' # Quick access to the home-manager configuration file
-alias cnix='code /etc/nixos/'
+alias nixcode='code /etc/nixos/'
 alias nixbuild='sudo nixos-rebuild switch' # Quick access to the nixos rebuild command
 
 # Flatpak alias

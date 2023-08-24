@@ -125,7 +125,7 @@ in {
       '';
     };
     "modules/powermenu.sh" = {
-      source = "/etc/nixos/modules/powermenu.sh";
+      source = "/etc/nixos/scripts/powermenu.sh";
       target = "${config.home.homeDirectory}/.config/i3/powermenu.sh";
     };
     "modules/bashrc" = {
