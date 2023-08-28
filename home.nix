@@ -104,6 +104,7 @@ in {
     kooha
     gnupg
     yubikey-manager-qt
+    copyq
   ];
 
   fonts.fontconfig.enable = true;

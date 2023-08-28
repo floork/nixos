@@ -68,7 +68,7 @@
     bindsym $mod+h split h
 
     # split in vertical orientation
-    bindsym $mod+v split v
+    bindsym $mod+Shift+v split v
 
     # enter fullscreen mode for the focused container
     bindsym $mod+f fullscreen toggle
@@ -185,6 +185,7 @@
     }
 
     for_window [class="kruler"] floating enable
+    for_window [class="copyq"] floating enable
 
     # start a terminal
     bindsym $mod+Return exec kitty
@@ -208,6 +209,7 @@
     bindsym $mod+p exec bash ~/.config/i3/powermenu.sh
     bindsym $mod+r exec kruler
     bindsym $mod+Ctrl+r exec peek
+    bindsym $mod+v exec copyq toggle
 
     # Startup programs
     exec_always --no-startup-id /etc/nixos/scripts/default.sh
