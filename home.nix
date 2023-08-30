@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 let
+  # Import module configurations
   fishConfig = import ./modules/fish.nix { inherit config pkgs; };
   zshConfig = import ./modules/zsh.nix { inherit config pkgs; };
   starshipConfig = import ./modules/starship.nix { inherit config pkgs; };
@@ -22,93 +23,98 @@ in {
 
   home.sessionVariables = { EDITOR = "vim"; };
 
-  # environment.cursor.theme = "/path/to/cursor/themes/MyCursorTheme";
-
+  # List of packages
   home.packages = with pkgs; [
-    flatpak
-    kitty
-    gparted
-    discord
-    spotify
-    bottles
-    steam
-    vscode
-    lutris
-    thunderbird
-    qbittorrent
+    # Terminal Utilities
+    curl
+    exa
+    fish
+    gh
+    htop
     neofetch
+    pkg-config
+    rustup
+    util-linux
+    wget
     zsh-autosuggestions
     zsh-syntax-highlighting
+
+    # Fonts
     fira-code
     fira-code-symbols
     meslo-lg
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    firefox
-    gimp
-    variety
-    notion-app-enhanced
-    gnomeKeyringPkgs
-    obsidian
-    insync
-    libsForQt5.kruler
-    obs-studio
-    remmina
-    networkmanagerapplet
-    git
-    vim
-    wget
-    starship
-    fish
-    curl
-    exa
-    neofetch
-    util-linux
-    htop
-    gh
-    rofi
-    xfce.thunar
+
+    # System Utilities
+    arandr
     betterlockscreen
-    dunst
-    libnotify
-    vscode
-    killall
     bluez
     bluez-tools
     blueman
-    pipewire
-    nixfmt
-    rustup
+    docker
     gcc
-    pkgconfig
-    pkg-config
+    git
+    inxi
+    killall
+    libiconv
+    nixfmt
     openssl
     openssl.dev
-    libiconv
-    arandr
-    docker
+    pipewire
     sqlite
-    python3
+
+    # Desktop Applications
+    bottles
+    discord
+    firefox
+    gimp
+    insync
+    kitty
+    lutris
     mysql-workbench
-    nodejs
-    dmidecode
-    inxi
-    hwinfo
-    hardinfo
-    lshw
-    cpu-x
-    openrgb
-    prismlauncher
+    networkmanagerapplet
+    notion-app-enhanced
+    obs-studio
+    obsidian
     peek
-    kooha
-    gnupg
+    prismlauncher
+    qbittorrent
+    remmina
+    rofi
+    steam
+    xfce.thunar
+    thunderbird
+    variety
     yubikey-manager-qt
+
+    # Development
+    nodejs
+    python3
+    vscode
+
+    # Hardware Info
+    cpu-x
+    dmidecode
+    hardinfo
+    hwinfo
+    lshw
+
+    # Miscellaneous
     copyq
+    gnomeKeyringPkgs
+    openrgb
+    peek
+    starship
+
+    # Flatpak
+    flatpak
   ];
 
   fonts.fontconfig.enable = true;
 
+  # Program configurations
   programs = {
     fish = fishConfig;
     zsh = zshConfig;
@@ -116,6 +122,7 @@ in {
     git = gitConfig;
   };
 
+  # File configurations
   home.file = {
     ".config/kitty/kitty.conf" = kittyConfig;
     ".config/neofetch/config.conf" = neofetchConfig;
@@ -134,5 +141,4 @@ in {
       target = "${config.home.homeDirectory}/.bashrc";
     };
   };
-
 }
