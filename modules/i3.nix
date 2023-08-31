@@ -214,6 +214,7 @@
     # Startup programs
     exec_always --no-startup-id /etc/nixos/scripts/default.sh
     exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+    exec --no-startup-id kdeconnect-indicator
     exec --no-startup-id variety
     exec --no-startup-id discord
     exec --no-startup-id spotify

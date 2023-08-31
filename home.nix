@@ -16,6 +16,19 @@ let
     paths = [ pkgs.gnome3.gnome-keyring ];
   };
 
+  # Define firewall rules to allow KDE Connect
+  firewallRules = {
+    allowedServices =
+      [ "kdeconnect" ]; # Create a service definition for KDE Connect
+    kdeconnect = {
+      description = "KDE Connect communication";
+      localPort = [ 1714 1716 ]; # UDP and TCP ports used by KDE Connect
+      remotePort = [ 1714 1716 ];
+      allowedTCPPorts = [ 1716 ]; # You can restrict this further if needed
+      allowedUDPPorts = [ 1714 ];
+    };
+  };
+
 in {
   home.username = "floork";
   home.homeDirectory = "/home/floork";
@@ -54,9 +67,11 @@ in {
     bluez-tools
     blueman
     docker
+    fprintd
     gcc
     git
     inxi
+    kdeconnect
     killall
     libiconv
     nixfmt

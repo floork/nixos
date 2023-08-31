@@ -111,13 +111,17 @@
   services.flatpak.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
+  # kdeconnect
+  networking.firewall.allowedTCPPorts = [ 1716 ]; # Adjust as needed
+  networking.firewall.allowedUDPPorts = [ 1714 ]; # Adjust as needed
+
   # Enable Fish as the default shell.
   programs.fish.enable = true;
 
   nix.gc = {
     automatic = true; # Enable automatic garbage collection.
     dates = "weekly"; # Specify the schedule for garbage collection.
-    options = "--delete-older-than 7d"; # Delete builds older than 7 days.
+    options = "--delete-older-than 5b"; # Delete builds older than 7 days.
   };
 
   system.autoUpgrade.enable = true;
