@@ -16,10 +16,20 @@ sudo cp /etc/nixos/hardware-configuration.nix ~/
 sudo rm /etc/nixos
 ```
 
-1.3 readd the hardware-configuration
+1.3 read the hardware-configuration
 
 ```sh
 sudo cp ~/hardware-configuration.nix /etc/nixos
+```
+
+1.4 install nixos un
+
+```sh
+# switch channel
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+sudo nixos-rebuild switch --upgrade
+# show version
+nixos-version
 ```
 
 2. install home-manager
@@ -50,4 +60,7 @@ sudo nix-channel --update
 sudo nixos-rebuild switch
 ```
 
-[todos](TODO.md)
+## TODO
+
+- symbols in kitty not properly showing
+- custom cursor
