@@ -85,7 +85,7 @@ in {
     bottles
     google-chrome
     discord
-    firefox
+    # firefox
     gimp
     insync
     kitty
