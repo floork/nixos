@@ -120,6 +120,7 @@ in {
     # Miscellaneous
     copyq
     gnomeKeyringPkgs
+    gnome3.gnome-tweaks
     openrgb
     peek
     starship
