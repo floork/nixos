@@ -83,6 +83,7 @@ in {
 
     # Desktop Applications
     bottles
+    google-chrome
     discord
     firefox
     gimp
@@ -144,11 +145,6 @@ in {
     ".config/kitty/kitty.conf" = kittyConfig;
     ".config/neofetch/config.conf" = neofetchConfig;
     ".config/i3/config" = i3Config;
-    ".config/rofi/config.rasi" = {
-      text = ''
-        @theme "/nix/store/gsya3v0afklrwkcxv4drzkdw5npvpcfa-rofi-1.7.5/share/rofi/themes/arthur.rasi"
-      '';
-    };
     "modules/powermenu.sh" = {
       source = "/etc/nixos/scripts/powermenu.sh";
       target = "${config.home.homeDirectory}/.config/i3/powermenu.sh";

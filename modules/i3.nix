@@ -214,6 +214,7 @@
     # Startup programs
     exec_always --no-startup-id /etc/nixos/scripts/default.sh
     exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+    exec_always --no-startup-id xinput --set-prop "Synaptics TM3289-021" "libinput Natural Scrolling Enabled" 1
     exec --no-startup-id kdeconnect-indicator
     exec --no-startup-id variety
     exec --no-startup-id discord
