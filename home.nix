@@ -48,6 +48,7 @@ in {
     pkg-config
     rustup
     util-linux
+    vim
     wget
     zsh-autosuggestions
     zsh-syntax-highlighting
