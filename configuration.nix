@@ -59,13 +59,23 @@
     };
   };
 
+  fonts.fonts = with pkgs; [ (nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
+
   services.picom.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.floork = {
     isNormalUser = true;
     description = "floork";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "docker"
+      ''
+        libvirtd
+      ''
+    ];
     home = "/home/floork";
     shell = pkgs.fish;
   };
@@ -82,6 +92,9 @@
   environment.sessionVariables = rec {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "floork" ];
 
   virtualisation.docker = {
     enable = true;

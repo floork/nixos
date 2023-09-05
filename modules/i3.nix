@@ -205,7 +205,7 @@
     bindsym $mod+d exec discord
     bindsym $mod+z exec thunderbird
     bindsym $mod+b exec firefox
-    bindsym $mod+n exec notion-app-enhanced
+    bindsym $mod+n exec obsidian
     bindsym $mod+p exec bash ~/.config/i3/powermenu.sh
     bindsym $mod+r exec kruler
     bindsym $mod+Ctrl+r exec peek

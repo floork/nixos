@@ -33,6 +33,7 @@ in {
   home.username = "floork";
   home.homeDirectory = "/home/floork";
   home.stateVersion = "23.05";
+  # autoUpgrade = true;
 
   home.sessionVariables = { EDITOR = "vim"; };
 
@@ -54,8 +55,6 @@ in {
     zsh-syntax-highlighting
 
     # Fonts
-    fira-code
-    fira-code-symbols
     meslo-lg
     noto-fonts
     noto-fonts-cjk
@@ -64,13 +63,18 @@ in {
     # System Utilities
     arandr
     betterlockscreen
+    bitwarden
+    bitwarden-cli
     bluez
     bluez-tools
     blueman
     docker
+    feh
     fprintd
     gcc
     git
+    graphviz
+    gparted
     inxi
     kdeconnect
     killall
@@ -81,18 +85,19 @@ in {
     pipewire
     sqlite
 
+    terminator
+
     # Desktop Applications
     bottles
     google-chrome
     discord
-    # firefox
+    firefox
     gimp
     insync
     kitty
     lutris
     mysql-workbench
     networkmanagerapplet
-    notion-app-enhanced
     obs-studio
     obsidian
     peek
@@ -101,14 +106,17 @@ in {
     remmina
     rofi
     steam
+    spotify
     xfce.thunar
     thunderbird
     variety
     yubikey-manager-qt
 
     # Development
+    openjdk
     nodejs
     python3
+    virt-manager
     vscode
 
     # Hardware Info
