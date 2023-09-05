@@ -15,7 +15,7 @@
     # bold_font Operator Mono Thick
     # bold_italic_font Operator Mono Medium
     # font_family      Input Mono
-    font_family "FiraCode-Regular, Regular"
+    font_family "MesloLGMDZ Nerd Font"
     italic_font      auto
     bold_font        auto
     bold_italic_font auto

@@ -31,11 +31,11 @@
 
     # Use pactl to adjust volume in PulseAudio.
     set $refresh_i3status killall -SIGUSR1 i3status
-    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+    # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+    # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 
-    bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-    bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+    # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+    # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
     # Use Mouse+$mod to drag floating windows to their wanted position
     floating_modifier $mod
@@ -150,6 +150,37 @@
     bindsym $mod+Shift+9 move container to workspace number $ws9
     bindsym $mod+Shift+0 move container to workspace number $ws10
 
+    # Multimedia keys
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+    bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+    bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+    bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+    bindsym XF86ScreenSaver exec --no-startup-id xset dpms force off
+    bindsym XF86PowerOff exec --no-startup-id systemctl poweroff
+    bindsym XF86HomePage exec --no-startup-id firefox
+    bindsym XF86Mail exec --no-startup-id thunderbird
+    bindsym XF86Explorer exec --no-startup-id thunar
+    bindsym XF86Calculator exec --no-startup-id gnome-calculator
+    bindsym XF86Launch1 exec --no-startup-id spotify
+    bindsym XF86Launch2 exec --no-startup-id discord
+    bindsym XF86WLAN exec --no-startup-id nmcli radio wifi
+    bindsym XF86Favorites exec --no-startup-id rofi -show drun -columns 3
+    bindsym XF86Search exec --no-startup-id rofi -show drun -columns 3
+    bindsym XF86Launch3 exec --no-startup-id code
+    bindsym XF86Launch4 exec --no-startup-id copyq toggle
+    bindsym XF86Launch5 exec --no-startup-id kdeconnect-indicator
+    bindsym XF86Display exec --no-startup-id xrandr --output DP-4 --auto --right-of primary --rotate normal
+    bindsym XF86KbdBrightnessUp exec --no-startup-id xbacklight -inc 10
+    bindsym XF86KbdBrightnessDown exec --no-startup-id xbacklight -dec 10
+    bindsym XF86RFKill exec --no-startup-id nmcli radio all
+    bindsym XF86MyComputer exec --no-startup-id pcmanfm
+    bindsym XF86AudioMedia exec --no-startup-id obsidian
+
     # reload the configuration file
     bindsym $mod+Shift+c reload
     # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -210,6 +241,12 @@
     bindsym $mod+r exec kruler
     bindsym $mod+Ctrl+r exec peek
     bindsym $mod+v exec copyq toggle
+
+    # Switch to the next desktop
+    bindsym $mod+Ctrl+Right workspace next
+
+    # Switch to the previous desktop
+    bindsym $mod+Ctrl+Left workspace prev
 
     # Startup programs
     exec_always --no-startup-id /etc/nixos/scripts/default.sh

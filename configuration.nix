@@ -59,8 +59,6 @@
     };
   };
 
-  fonts.fonts = with pkgs; [ (nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
-
   services.picom.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -88,6 +86,8 @@
 
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
+
+  fonts.fonts = with pkgs; [ nerdfonts ];
 
   environment.sessionVariables = rec {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";

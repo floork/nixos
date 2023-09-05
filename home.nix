@@ -54,12 +54,6 @@ in {
     zsh-autosuggestions
     zsh-syntax-highlighting
 
-    # Fonts
-    meslo-lg
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-
     # System Utilities
     arandr
     betterlockscreen
@@ -79,10 +73,13 @@ in {
     kdeconnect
     killall
     libiconv
+    lxappearance
     nixfmt
     openssl
     openssl.dev
+    p7zip
     pipewire
+    playerctl
     sqlite
 
     terminator
