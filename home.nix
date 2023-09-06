@@ -127,8 +127,10 @@ in {
     copyq
     gnomeKeyringPkgs
     gnome3.gnome-tweaks
+    gnupg
     openrgb
     peek
+    pinentry
     starship
 
     # Flatpak
@@ -142,7 +144,7 @@ in {
     fish = fishConfig;
     zsh = zshConfig;
     starship = starshipConfig;
-    git = gitConfig;
+    # git = gitConfig;
   };
 
   # File configurations

@@ -87,7 +87,7 @@
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
-  fonts.fonts = with pkgs; [ nerdfonts ];
+  fonts.packages = with pkgs; [ nerdfonts ];
 
   environment.sessionVariables = rec {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
