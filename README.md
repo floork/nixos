@@ -62,6 +62,5 @@ sudo nixos-rebuild switch
 
 ## TODO
 
-- symbols in kitty not properly showing
 - custom cursor
-- fingerprint for `thinkpad` 
+- fingerprint for `thinkpad`
