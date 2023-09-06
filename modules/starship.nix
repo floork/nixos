@@ -25,7 +25,7 @@
     directory = {
       truncation_length = 3;
       truncation_symbol = "…/";
-      home_symbol = " ~";
+      home_symbol = " ~";
       read_only_style = "cyan";
       read_only = "  ";
       format = "at [$path](cyan bold dimmed)[$read_only]($read_only_style) ";
@@ -33,9 +33,9 @@
     shell = {
       cmd_indicator = "_";
       powershell_indicator = "PS";
-      bash_indicator = "bash";
-      fish_indicator = "";
-      zsh_indicator = "zsh";
+      bash_indicator = "󱆃";
+      fish_indicator = "󰈺";
+      zsh_indicator = "󱐋";
       unknown_indicator = "mystery shell";
       style = "cyan bold dimmed";
       disabled = false;
@@ -70,7 +70,7 @@
       # ahead = "⇡${count}";
       # diverged = "⇕⇡${ahead_count}⇣${behind_count}";
       # behind = "⇣${count}";
-      stashed = " ";
+      stashed = "󰓜 ";
       modified = " ";
       staged = "[++($count)](green)";
       renamed = "襁 ";
@@ -95,11 +95,11 @@
       format = "via [ $version](bold green) ";
       disabled = true;
     };
-    package = { symbol = " "; };
+    package = { symbol = " "; };
     perl = { symbol = " "; };
     php = { symbol = " "; };
     python = {
-      symbol = " ";
+      symbol = " ";
       python_binary = "python3";
     };
     terraform = {
