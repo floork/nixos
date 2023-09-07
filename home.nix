@@ -81,9 +81,8 @@ in {
     pipewire
     playerctl
     sqlite
-
-    terminator
-
+    translate-shell
+    
     # Desktop Applications
     bottles
     google-chrome
