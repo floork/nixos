@@ -124,7 +124,7 @@ in {
 
     # Miscellaneous
     copyq
-    duplici
+    duplicati
     gnomeKeyringPkgs
     gnome3.gnome-tweaks
     gnupg
