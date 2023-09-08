@@ -78,16 +78,18 @@ in {
     openssl
     openssl.dev
     p7zip
+    pavucontrol
     pipewire
     playerctl
     sqlite
     translate-shell
-    
+
     # Desktop Applications
     bottles
     google-chrome
     discord
     firefox
+    flameshot
     gimp
     insync
     kitty

@@ -50,10 +50,12 @@ alias bashrc='vim ~/.bashrc' # Quick access to the ~/.bashrc file
 alias fishrc='vim ~/.config/fish/config.fish' # Quick access to the ~/.fishrc file
 alias aliasrc='vim ~/.alias/aliasrc' # Quick access to this file
 
+# nix alias
 alias nixrc='vim /etc/nixos/configuration.nix' # Quick access to the nixos configuration file
 alias homerc='vim /etc/nixos/home.nix' # Quick access to the home-manager configuration file
 alias nixcode='code /etc/nixos/'
 alias nixbuild='sudo nixos-rebuild switch' # Quick access to the nixos rebuild command
+alias nixclean='nix-collect-garbage -d'
 
 # Flatpak alias
 alias flatty='flatpak install flathub'

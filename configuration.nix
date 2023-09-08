@@ -42,7 +42,6 @@
   services.xserver = {
     enable = true;
     layout = "us";
-    xkbOptions = "caps:f13";
 
     desktopManager = { xterm.enable = false; };
     displayManager = { defaultSession = "none+i3"; };
@@ -132,9 +131,9 @@
   programs.fish.enable = true;
 
   nix.gc = {
-    automatic = true; # Enable automatic garbage collection.
-    dates = "weekly"; # Specify the schedule for garbage collection.
-    options = "--delete-older-than 5b"; # Delete builds older than 7 days.
+    automatic = true; # Enable the automatic garbage collector
+    dates = "03:15"; # When to run the garbage collector
+    options = "-d"; # Arguments to pass to nix-collect-garbage
   };
 
   system.autoUpgrade.enable = true;
