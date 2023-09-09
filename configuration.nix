@@ -54,11 +54,14 @@
         i3lock # default i3 screen locker
         i3blocks # if you are planning on using i3blocks over i3status
       ];
-      # cursor.theme = "./Future-black-cursors/index.theme";/* --> tbd */
     };
   };
 
   services.picom.enable = true;
+
+  services.logind.extraConfig = "HandleLidSwitch=ignore";
+
+  services.fprintd = { enable = true; };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.floork = {
@@ -72,6 +75,7 @@
       ''
         libvirtd
       ''
+      "plugdev"
     ];
     home = "/home/floork";
     shell = pkgs.fish;

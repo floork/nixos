@@ -31,6 +31,10 @@ sudo nix-channel --update
 sudo nixos-rebuild switch
 ```
 
+## cursor can be set over lxappearance
+
+- Future-cursor-theme in [here](cursor/Future-black-cursors.tar.gz)
+
 ## TODO
 
 - fingerprint for `thinkpad`
