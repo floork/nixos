@@ -86,9 +86,8 @@ in {
 
     # Desktop Applications
     bottles
-    google-chrome
+    brave
     discord
-    firefox
     flameshot
     gimp
     insync
