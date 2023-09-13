@@ -235,7 +235,7 @@
     bindsym $mod+c exec code
     bindsym $mod+d exec discord
     bindsym $mod+z exec thunderbird
-    bindsym $mod+b exec firefox
+    bindsym $mod+b exec brave
     bindsym $mod+n exec obsidian
     bindsym $mod+p exec bash ~/.config/i3/powermenu.sh
     bindsym $mod+r exec kruler
