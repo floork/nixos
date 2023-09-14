@@ -45,7 +45,7 @@ in {
     alias ex=extract
 
     # Include all aliases
-    [ -f /etc/nixos/modules/aliasrc ] && source /etc/nixos/modules/aliasrc
+    [ -f /etc/nixos/configs/aliasrc ] && source /etc/nixos/configs/aliasrc
 
     # add home-manager to path
     export PATH="$HOME/.nix-profile/bin:$PATH"

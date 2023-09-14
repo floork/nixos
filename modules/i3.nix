@@ -237,7 +237,7 @@
     bindsym $mod+z exec thunderbird
     bindsym $mod+b exec brave
     bindsym $mod+n exec obsidian
-    bindsym $mod+p exec bash ~/.config/i3/powermenu.sh
+    bindsym $mod+p exec lua /etc/nixos/scripts/powermenu.lua
     bindsym $mod+r exec kruler
     bindsym $mod+Ctrl+r exec peek
     bindsym $mod+v exec copyq toggle
@@ -249,6 +249,7 @@
     bindsym $mod+Ctrl+Left workspace prev
 
     # Startup programs
+    exec - -no-startup-id pgrep - x polybar || polybar
     exec_always --no-startup-id /etc/nixos/scripts/default.sh
     exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
     exec_always --no-startup-id xinput --set-prop "Synaptics TM3289-021" "libinput Natural Scrolling Enabled" 1

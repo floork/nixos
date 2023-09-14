@@ -9,6 +9,7 @@ let
   kittyConfig = import ./modules/kitty.nix { inherit config pkgs; };
   i3Config = import ./modules/i3.nix { inherit config pkgs; };
   gitConfig = import ./modules/git.nix { inherit config pkgs; };
+  rofiConfig = import ./modules/rofi.nix { inherit config pkgs; };
 
   # Install GNOME Keyring and its dependencies
   gnomeKeyringPkgs = pkgs.buildEnv {
@@ -41,7 +42,8 @@ in {
   home.packages = with pkgs; [
     # Terminal Utilities
     curl
-    exa
+    lsd # error: 'exa' has been removed because it is unmaintained upstream. Consider using 'eza', a maintained fork
+    tree
     fish
     gh
     htop
@@ -73,6 +75,7 @@ in {
     kdeconnect
     killall
     libiconv
+    libnotify
     lxappearance
     nixfmt
     openssl
@@ -110,6 +113,7 @@ in {
     yubikey-manager-qt
 
     # Development
+    lua
     openjdk
     nodejs
     python3
@@ -153,12 +157,9 @@ in {
     ".config/kitty/kitty.conf" = kittyConfig;
     ".config/neofetch/config.conf" = neofetchConfig;
     ".config/i3/config" = i3Config;
-    "modules/powermenu.sh" = {
-      source = "/etc/nixos/scripts/powermenu.sh";
-      target = "${config.home.homeDirectory}/.config/i3/powermenu.sh";
-    };
+    ".config/rofi/config.rasi" = rofiConfig;
     "modules/bashrc" = {
-      source = "/etc/nixos/modules/bashrc";
+      source = "/etc/nixos/configs/bashrc";
       target = "${config.home.homeDirectory}/.bashrc";
     };
   };

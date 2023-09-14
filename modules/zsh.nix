@@ -105,7 +105,7 @@
     ### End of functions
 
     # Include all aliases
-    [ -f /etc/nixos/modules/aliasrc ] && source /etc/nixos/modules/aliasrc
+    [ -f /etc/nixos/configs/aliasrc ] && source /etc/nixos/configs/aliasrc
 
     # starship
     eval "$(starship init zsh)"
