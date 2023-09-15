@@ -21,7 +21,7 @@ alias cp='cp -r'
 alias mv='mv'
 alias scp='sudo cp -r'
 
-# Changing "ls" to "exa"
+# Changing "ls" to "lsd"
 alias ls='lsd --icon always --color always --group-dirs first' # my preferred listing
 alias ll='lsd -l --icon always --color always --group-dirs first' # long format
 alias la='lsd -a --icon always --color always --group-dirs first' # all files and dirs
