@@ -244,6 +244,7 @@
     bindsym $mod+Ctrl+r exec peek
     bindsym $mod+v exec copyq toggle
     bindsym $mod+Shift+q xkill
+    bindsym $mod+s exec spotify
 
     # Switch to the next desktop
     bindsym $mod+Ctrl+Right workspace next
