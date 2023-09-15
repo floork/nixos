@@ -65,6 +65,7 @@ in {
     bluez-tools
     blueman
     docker
+    emojipick
     feh
     fprintd
     gcc
@@ -86,11 +87,13 @@ in {
     playerctl
     sqlite
     translate-shell
+    xkill
 
     # Desktop Applications
     bottles
     brave
     discord
+    element-desktop
     flameshot
     gimp
     insync

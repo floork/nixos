@@ -230,17 +230,20 @@
     bindsym $mod+space exec rofi -show drun -columns 3
 
     # own binds
-    bindsym $mod+e exec thunar
-    bindsym $mod+x exec kitty
+    bindsym $mod+b exec brave
+    bindsym $mod+Shift+b exec bitwarden
     bindsym $mod+c exec code
     bindsym $mod+d exec discord
-    bindsym $mod+z exec thunderbird
-    bindsym $mod+b exec brave
+    bindsym $mod+Shift+e exec element-desktop
+    bindsym $mod+x exec kitty
+    bindsym $mod+e exec thunar
     bindsym $mod+n exec obsidian
+    bindsym $mod+z exec thunderbird
     bindsym $mod+p exec lua /etc/nixos/scripts/powermenu.lua
     bindsym $mod+r exec kruler
     bindsym $mod+Ctrl+r exec peek
     bindsym $mod+v exec copyq toggle
+    bindsym $mod+Shift+q xkill
 
     # Switch to the next desktop
     bindsym $mod+Ctrl+Right workspace next
