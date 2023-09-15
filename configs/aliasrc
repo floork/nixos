@@ -9,26 +9,35 @@ alias suspend='systemctl suspend'
 alias clear='clear && neofetch'
 alias cls='clear'
 alias ende='suspend && exit'
+alias tree='exa -aT --color=always --group-directories-first' # tree listing
+alias vim='lvim'
+alias svim='sudo lvim'
+
+# sys
 alias sctl='sudo sytemctl'
 alias blkid='sudo blkid -o export'
 alias dlist='sudo blkid -o list'
-alias tree='lsd --tree' # tree listing
+alias hosts='vim /home/flmr799e/Documents/server/hosts && updatehosts'
+alias updatehosts='sudo cp /home/flmr799e/Documents/server/hosts /etc/hosts'
 
 # copy and moving
-alias rm='rm -rf'
+alias cd..='cd ..'
+alias rm='rm -r'
+alias frm='rm -rf'
 alias copy='ls && rsync -avh --progress'
 alias cp='cp -r'
 alias mv='mv'
 alias scp='sudo cp -r'
 
-# Changing "ls" to "lsd"
+# Changing "ls" to "exa"
+alias l='ls'
 alias ls='lsd --icon always --color always --group-dirs first' # my preferred listing
 alias ll='lsd -l --icon always --color always --group-dirs first' # long format
 alias la='lsd -a --icon always --color always --group-dirs first' # all files and dirs
 alias lal='lsd -la --icon always --color always --group-dirs first' # long format all files and dirs
 alias lg='lsd --git --icon always --color always --group-dirs first' # Display git status.  Directory git status is a reduction of included file statuses (recursively).
 alias lr='lsd -aR --icon always --color always --group-dirs first' # list recursively
-alias lt='tree' # tree listing
+alias lt='tree' # tree listing# tree listing
 
 # help and history
 alias h='history'
@@ -45,6 +54,8 @@ alias gt-log='git log --oneline --decorate --graph --all'
 alias gt-logall='git log --oneline --decorate --graph --all --full-history --simplify-by-decoration'
 alias gt-legacyNewBranch='git checkout -b'
 alias gt-legacySwitchBranch='git checkout'
+
+alias sshConfig='vim ~/.ssh/config'
 
 # shell alias
 alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
