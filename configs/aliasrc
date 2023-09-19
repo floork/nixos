@@ -14,7 +14,7 @@ alias vim='lvim'
 alias svim='sudo lvim'
 
 # sys
-alias sctl='sudo sytemctl'
+alias sctl='sudo systemctl'
 alias blkid='sudo blkid -o export'
 alias dlist='sudo blkid -o list'
 alias hosts='vim /home/flmr799e/Documents/server/hosts && updatehosts'
