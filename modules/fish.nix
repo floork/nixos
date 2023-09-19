@@ -33,7 +33,7 @@ in {
     set -gx PATH "$HOME/.cargo/bin" $PATH
     set fish_greeting ""
     set TERM xterm-256color
-    set EDITOR vim
+    set -Ux EDITOR vim
 
     ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
     set fish_color_normal brcyan
