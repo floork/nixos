@@ -74,9 +74,9 @@
     bindsym $mod+f fullscreen toggle
 
     # change container layout (stacked, tabbed, toggle split)
-    bindsym $mod+s layout stacking
+    bindsym $mod+Shift+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+Shift+e layout toggle split
+    bindsym $mod+Ctrl+e layout toggle split
 
     # toggle tiling / floating
     bindsym $mod+Shift+space floating toggle
@@ -243,7 +243,7 @@
     bindsym $mod+r exec kruler
     bindsym $mod+Ctrl+r exec peek
     bindsym $mod+v exec copyq toggle
-    bindsym $mod+Shift+q xkill
+    # bindsym $mod+Shift+q xkill # --> currently not working
     bindsym $mod+s exec spotify
 
     # Switch to the next desktop
