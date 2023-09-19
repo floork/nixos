@@ -87,7 +87,7 @@ in {
     playerctl
     sqlite
     translate-shell
-    xkill
+    xorg.xkill
 
     # Desktop Applications
     bottles
