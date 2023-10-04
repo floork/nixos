@@ -2,13 +2,7 @@
 
 let
   # Import module configurations
-  fishConfig = import ./modules/fish.nix { inherit config pkgs; };
-  zshConfig = import ./modules/zsh.nix { inherit config pkgs; };
-  starshipConfig = import ./modules/starship.nix { inherit config pkgs; };
-  neofetchConfig = import ./modules/neofetch.nix { inherit config pkgs; };
-  kittyConfig = import ./modules/kitty.nix { inherit config pkgs; };
   i3Config = import ./modules/i3.nix { inherit config pkgs; };
-  gitConfig = import ./modules/git.nix { inherit config pkgs; };
   rofiConfig = import ./modules/rofi.nix { inherit config pkgs; };
 
   # Install GNOME Keyring and its dependencies
@@ -148,23 +142,9 @@ in {
 
   fonts.fontconfig.enable = true;
 
-  # Program configurations
-  programs = {
-    fish = fishConfig;
-    zsh = zshConfig;
-    starship = starshipConfig;
-    # git = gitConfig;
-  };
-
   # File configurations
   home.file = {
-    ".config/kitty/kitty.conf" = kittyConfig;
-    ".config/neofetch/config.conf" = neofetchConfig;
     ".config/i3/config" = i3Config;
     ".config/rofi/config.rasi" = rofiConfig;
-    "modules/bashrc" = {
-      source = "/etc/nixos/configs/bashrc";
-      target = "${config.home.homeDirectory}/.bashrc";
-    };
   };
 }
