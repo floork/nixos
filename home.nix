@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 let
-  # Import module configurations
-  i3Config = import ./modules/i3.nix { inherit config pkgs; };
-  rofiConfig = import ./modules/rofi.nix { inherit config pkgs; };
-
   # Install GNOME Keyring and its dependencies
   gnomeKeyringPkgs = pkgs.buildEnv {
     name = "gnome-keyring-packages";
@@ -30,13 +26,24 @@ in {
   home.stateVersion = "23.05";
   # autoUpgrade = true;
 
-  home.sessionVariables = { EDITOR = "vim"; };
+  home.sessionVariables = {
+    EDITOR = "vim";
+    XDG_CURRENT_DESKTOP = "Sway";
+  };
 
   # List of packages
   home.packages = with pkgs; [
+    # hyprland stuff
+    dunst
+    swaylock
+    waybar
+    waypaper
+    wl-clipboard
+    wofi
+
     # Terminal Utilities
     curl
-    lsd # error: 'exa' has been removed because it is unmaintained upstream. Consider using 'eza', a maintained fork
+    lsd
     tree
     fish
     gh
@@ -52,7 +59,6 @@ in {
 
     # System Utilities
     arandr
-    betterlockscreen
     bitwarden
     bitwarden-cli
     bluez
@@ -87,22 +93,21 @@ in {
     # Desktop Applications
     bottles
     brave
+    chromiumDev # alternative to brave
     discord
     element-desktop
     flameshot
     gimp
     insync
     kitty
+    libsForQt5.kruler
     lutris
-    mysql-workbench
     networkmanagerapplet
     obs-studio
     obsidian
-    peek
     prismlauncher
     qbittorrent
     remmina
-    rofi
     steam
     spotify
     xfce.thunar
@@ -112,8 +117,10 @@ in {
 
     # Development
     lua
-    openjdk
+    mysql-workbench
     nodejs
+    neovim
+    openjdk
     python3
     virt-manager
     vscode
@@ -141,10 +148,4 @@ in {
   ];
 
   fonts.fontconfig.enable = true;
-
-  # File configurations
-  home.file = {
-    ".config/i3/config" = i3Config;
-    ".config/rofi/config.rasi" = rofiConfig;
-  };
 }
