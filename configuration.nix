@@ -58,12 +58,12 @@
   # };
 
   services.xserver = {
-  enable = true;
-  layout = "us";
-  xkbOptions = "caps:swapescape";
-  displayManager.gdm = {
     enable = true;
-    wayland = true;
+    layout = "us";
+    xkbOptions = "caps:swapescape";
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
     };
   };
 
@@ -99,7 +99,7 @@
       "plugdev"
     ];
     home = "/home/floork";
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
 
   home-manager = {
@@ -153,7 +153,10 @@
   networking.firewall.allowedUDPPorts = [ 1714 ]; # Adjust as needed
 
   # Enable Fish as the default shell.
-  programs.fish.enable = true;
+  # programs.fish.enable = true;
+
+  # enable zsh as the default shell
+  programs.zsh.enable = true;
 
   nix.gc = {
     automatic = true; # Enable the automatic garbage collector

@@ -148,4 +148,26 @@ in {
   ];
 
   fonts.fontconfig.enable = true;
+
+  home.file = {
+    # files for home dir
+    ".gitconfig" = { source = ./dotfiles/gitconfig; };
+    ".bashrc" = { source = ./dotfiles/bashrc; };
+    ".zshrc" = { source = ./dotfiles/zsh/zshrc; };
+
+    # files for .config
+    ".config/dconf" = { source = ./dotfiles/dconf; };
+    ".config/fish" = { source = ./dotfiles/fish; };
+    ".config/gh" = { source = ./dotfiles/gh; };
+    ".config/gtk-3.0" = { source = ./dotfiles/gtk-3.0; };
+    ".config/hypr" = { source = ./dotfiles/hypr; };
+    ".config/kitty" = { source = ./dotfiles/kitty; };
+    ".config/neofetch" = { source = ./dotfiles/neofetch; };
+    ".config/nvim" = { source = ./dotfiles/nvim; };
+    ".config/starship.toml" = { source = ./dotfiles/starship.toml; };
+    ".config/waybar" = { source = ./dotfiles/waybar; };
+    ".config/wofi" = { source = ./dotfiles/wofi; };
+    ".config/xsettingsd" = { source = ./dotfiles/xsettingsd; };
+    ".config/zsh" = { source = ./dotfiles/zsh; };
+  };
 }
