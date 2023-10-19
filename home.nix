@@ -153,6 +153,7 @@ in {
   home.file = {
     # files for home dir
     ".gitconfig" = { source = ./dotfiles/gitconfig; };
+    ".gitconfig-github" = { source = ./dotfiles/gitconfig-github; };
     ".bashrc" = { source = ./dotfiles/bashrc; };
     ".zshrc" = { source = ./dotfiles/zsh/zshrc; };
 

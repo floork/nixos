@@ -140,6 +140,14 @@
   # enable zsh as the default shell
   programs.zsh.enable = true;
 
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.udev.extraRules = ''
+    SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="ntfs", ENV{UDISKS_PRESENTATION_HIDE}="0"
+    SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="vfat", ENV{UDISKS_PRESENTATION_HIDE}="0"
+  '';
+
   nix.gc = {
     automatic = true; # Enable the automatic garbage collector
     dates = "03:15"; # When to run the garbage collector
