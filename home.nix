@@ -93,7 +93,7 @@ in {
     # Desktop Applications
     bottles
     brave
-    chromiumDev # alternative to brave
+    chromium
     discord
     element-desktop
     flameshot
@@ -108,7 +108,7 @@ in {
     prismlauncher
     qbittorrent
     remmina
-    steam
+    # steam
     spotify
     xfce.thunar
     thunderbird
@@ -131,6 +131,7 @@ in {
     hardinfo
     hwinfo
     lshw
+    ntfs3g
 
     # Miscellaneous
     copyq

@@ -39,42 +39,16 @@
 
   environment.pathsToLink = [ "/libexec" ];
 
-  # services.xserver = {
-  #   enable = true;
-  #   layout = "us";
-
-  #   desktopManager = { xterm.enable = false; };
-  #   displayManager = { defaultSession = "none+i3"; };
-
-  #   windowManager.i3 = {
-  #     enable = true;
-  #     extraPackages = with pkgs; [
-  #       dmenu # application launcher most people use
-  #       i3status # gives you the default i3 status bar
-  #       i3lock # default i3 screen locker
-  #       i3blocks # if you are planning on using i3blocks over i3status
-  #     ];
-  #   };
-  # };
-
   services.xserver = {
     enable = true;
     layout = "us";
-    xkbOptions = "caps:swapescape";
     displayManager.gdm = {
       enable = true;
       wayland = true;
     };
   };
 
-  programs.hyprland = {
-    enable = true;
-    # extraPackages = with pkgs; [
-    #   wl-clipboard
-    #   mako
-    #   wofi
-    # ];
-  };
+  programs.hyprland = { enable = true; };
 
   programs.waybar.enable = true;
 
@@ -92,6 +66,7 @@
       "networkmanager"
       "wheel"
       "audio"
+      "pulse"
       "docker"
       ''
         libvirtd
@@ -100,6 +75,24 @@
     ];
     home = "/home/floork";
     shell = pkgs.zsh;
+  };
+
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
+
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
+  hardware.pulseaudio.package = pkgs.pulseaudioFull;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall =
+      true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall =
+      true; # Open ports in the firewall for Source Dedicated Server
   };
 
   home-manager = {
@@ -131,14 +124,6 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.package = pkgs.bluez;
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
   environment.etc = {
     "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text =
       "	bluez_monitor.properties = {\n		[\"bluez5.enable-sbc-xq\"] = true,\n		[\"bluez5.enable-msbc\"] = true,\n		[\"bluez5.enable-hw-volume\"] = true,\n		[\"bluez5.headset-roles\"] = \"[ hsp_hs hsp_ag hfp_hf hfp_ag ]\"\n	}\n";
@@ -151,9 +136,6 @@
   # kdeconnect
   networking.firewall.allowedTCPPorts = [ 1716 ]; # Adjust as needed
   networking.firewall.allowedUDPPorts = [ 1714 ]; # Adjust as needed
-
-  # Enable Fish as the default shell.
-  # programs.fish.enable = true;
 
   # enable zsh as the default shell
   programs.zsh.enable = true;
