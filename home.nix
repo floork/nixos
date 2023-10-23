@@ -108,7 +108,6 @@ in {
     prismlauncher
     qbittorrent
     remmina
-    # steam
     spotify
     xfce.thunar
     thunderbird
@@ -116,14 +115,28 @@ in {
     yubikey-manager-qt
 
     # Development
+    beekeeper-studio
     lua
+    lua-language-server
     mysql-workbench
     nodejs
-    neovim
     openjdk
     python3
     virt-manager
     vscode
+
+    # NeoVim
+    deno
+    fzf
+    gnumake
+    grip
+    lazygit
+    luajitPackages.lua-lsp
+    neovim
+    pandoc
+    ripgrep
+    unzip
+    vimPlugins.telescope-fzf-native-nvim
 
     # Hardware Info
     cpu-x
