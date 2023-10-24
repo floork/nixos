@@ -91,7 +91,6 @@ in {
     xorg.xkill
 
     # Desktop Applications
-    bottles
     brave
     chromium
     discord
@@ -101,9 +100,7 @@ in {
     insync
     kitty
     libsForQt5.kruler
-    lutris
     networkmanagerapplet
-    obs-studio
     obsidian
     prismlauncher
     qbittorrent
@@ -113,16 +110,12 @@ in {
     thunderbird
     variety
     yubikey-manager-qt
-
-    # Development
     beekeeper-studio
     lua
     lua-language-server
-    mysql-workbench
     nodejs
     openjdk
     python3
-    virt-manager
     vscode
 
     # NeoVim
@@ -150,9 +143,7 @@ in {
     copyq
     duplicati
     gnomeKeyringPkgs
-    gnome3.gnome-tweaks
     gnupg
-    openrgb
     peek
     pinentry
     starship
