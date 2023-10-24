@@ -87,7 +87,7 @@ in {
     playerctl
     sqlite
     translate-shell
-    trashy
+    trash-cli
     xorg.xkill
 
     # Desktop Applications
