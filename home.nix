@@ -96,8 +96,8 @@ in {
     chromium
     discord
     element-desktop
-    flameshot
     gimp
+    grim
     insync
     kitty
     libsForQt5.kruler
