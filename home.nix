@@ -64,6 +64,7 @@ in {
     bluez
     bluez-tools
     blueman
+    brightnessctl
     docker
     emojipick
     feh
