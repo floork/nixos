@@ -95,12 +95,14 @@ in {
     brave
     chromium
     discord
+    drawio
     element-desktop
     flameshot
     gimp
     insync
     kitty
     libsForQt5.kruler
+    libreoffice
     networkmanagerapplet
     obsidian
     prismlauncher
