@@ -51,6 +51,7 @@ in {
     neofetch
     pkg-config
     rustup
+    tldr
     util-linux
     vim
     wget
