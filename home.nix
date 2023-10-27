@@ -24,16 +24,13 @@ in {
   home.username = "floork";
   home.homeDirectory = "/home/floork";
   home.stateVersion = "23.05";
-  # autoUpgrade = true;
-
   home.sessionVariables = {
     EDITOR = "vim";
     XDG_CURRENT_DESKTOP = "Sway";
   };
 
-  # List of packages
   home.packages = with pkgs; [
-    # hyprland stuff
+    # Window Manager and Desktop Environment
     dunst
     swaybg
     swaylock
@@ -52,8 +49,6 @@ in {
     neofetch
     pkg-config
     rustup
-    tldr
-    util-linux
     vim
     wget
     zsh-autosuggestions
@@ -89,8 +84,10 @@ in {
     pipewire
     playerctl
     sqlite
+    tldr
     translate-shell
     trash-cli
+    util-linux
     xorg.xkill
 
     # Desktop Applications
@@ -115,7 +112,10 @@ in {
     thunderbird
     variety
     yubikey-manager-qt
+
+    # Development
     beekeeper-studio
+    geany
     lua
     lua-language-server
     nodejs
@@ -158,5 +158,5 @@ in {
   ];
 
   fonts.fontconfig.enable = true;
-
 }
+
