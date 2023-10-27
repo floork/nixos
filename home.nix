@@ -35,6 +35,7 @@ in {
   home.packages = with pkgs; [
     # hyprland stuff
     dunst
+    swaybg
     swaylock
     waybar
     waypaper
