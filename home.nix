@@ -102,6 +102,7 @@ in {
     insync
     kitty
     libsForQt5.kruler
+    libreoffice
     lutris
     networkmanagerapplet
     obs-studio
@@ -109,6 +110,7 @@ in {
     prismlauncher
     qbittorrent
     remmina
+    slurp
     spotify
     xfce.thunar
     thunderbird
