@@ -8,17 +8,17 @@ let
   };
 
   # Define firewall rules to allow KDE Connect
-  firewallRules = {
-    allowedServices =
-      [ "kdeconnect" ]; # Create a service definition for KDE Connect
-    kdeconnect = {
-      description = "KDE Connect communication";
-      localPort = [ 1714 1716 ]; # UDP and TCP ports used by KDE Connect
-      remotePort = [ 1714 1716 ];
-      allowedTCPPorts = [ 1716 ]; # You can restrict this further if needed
-      allowedUDPPorts = [ 1714 ];
-    };
-  };
+  # firewallRules = {
+  #   allowedServices =
+  #     [ "kdeconnect" ]; # Create a service definition for KDE Connect
+  #   kdeconnect = {
+  #     description = "KDE Connect communication";
+  #     localPort = [ 1714 1716 ]; # UDP and TCP ports used by KDE Connect
+  #     remotePort = [ 1714 1716 ];
+  #     allowedTCPPorts = [ 1716 ]; # You can restrict this further if needed
+  #     allowedUDPPorts = [ 1714 ];
+  #   };
+  # };
 
 in {
   home.username = "floork";
@@ -88,7 +88,9 @@ in {
     translate-shell
     trash-cli
     util-linux
+    wireplumber
     xorg.xkill
+    xwayland
 
     # Desktop Applications
     brave
@@ -111,11 +113,13 @@ in {
     xfce.thunar
     thunderbird
     variety
+    webcord
     yubikey-manager-qt
 
     # Development
     beekeeper-studio
     geany
+    go
     lua
     lua-language-server
     nodejs
@@ -125,14 +129,20 @@ in {
 
     # NeoVim
     deno
+    fd
     fzf
     gnumake
     grip
     lazygit
     luajitPackages.lua-lsp
+    luajitPackages.luarocks-nix
     neovim
+    nodePackages.eslint
+    nodePackages.prettier
     pandoc
+    python311Packages.pip
     ripgrep
+    shfmt
     unzip
     vimPlugins.telescope-fzf-native-nvim
 
