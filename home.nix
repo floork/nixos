@@ -59,7 +59,6 @@ in {
     zsh-syntax-highlighting
 
     # System Utilities
-    arandr
     bitwarden
     bitwarden-cli
     bluez
@@ -78,7 +77,6 @@ in {
     killall
     libiconv
     libnotify
-    lxappearance
     nixfmt
     openssl
     openssl.dev
