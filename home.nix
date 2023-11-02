@@ -65,7 +65,7 @@ in {
     bluez-tools
     blueman
     docker
-    emojipick
+    emote
     feh
     fprintd
     gcc
