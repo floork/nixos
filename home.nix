@@ -150,7 +150,7 @@ in {
     ntfs3g
 
     # Miscellaneous
-    copyq
+    clipman
     duplicati
     gnomeKeyringPkgs
     gnome3.gnome-tweaks
