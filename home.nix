@@ -59,6 +59,7 @@ in {
     zsh-syntax-highlighting
 
     # System Utilities
+    alsa-utils
     bitwarden
     bitwarden-cli
     bluez
