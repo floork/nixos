@@ -95,6 +95,9 @@
       true; # Open ports in the firewall for Source Dedicated Server
   };
 
+   programs.nix-ld.enable = true;
+
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

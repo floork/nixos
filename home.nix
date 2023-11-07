@@ -94,7 +94,6 @@ in {
     bottles
     brave
     chromium
-    discord
     element-desktop
     flameshot
     gimp
@@ -115,15 +114,21 @@ in {
     thunderbird
     variety
     yubikey-manager-qt
+    webcord
 
     # Development
     beekeeper-studio
+    cmake
+    libratbag
     lua
     lua-language-server
+    meson
     mysql-workbench
     nodejs
     openjdk
+    python311Packages.pygobject3
     python3
+    python311Packages.pip
     virt-manager
     vscode
 
