@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ inputs, config, pkgs, ... }: 
 let
   # Install GNOME Keyring and its dependencies
   gnomeKeyringPkgs = pkgs.buildEnv {
@@ -21,17 +20,28 @@ let
   };
 
 in {
+  imports = [
+    inputs.hyprland.homeManagerModules.default
+  ];
+
+  # Info about user and path it manages
   home.username = "floork";
   home.homeDirectory = "/home/floork";
+ 
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces breaking changes.
   home.stateVersion = "23.05";
-  # autoUpgrade = true;
+  
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     XDG_CURRENT_DESKTOP = "Sway";
   };
 
-  # List of packages
+  # User packages
   home.packages = with pkgs; [
     # hyprland stuff
     dunst
@@ -134,14 +144,20 @@ in {
 
     # NeoVim
     deno
+    fd
     fzf
     gnumake
     grip
     lazygit
     luajitPackages.lua-lsp
+    luajitPackages.luarocks-nix
     neovim
+    nodePackages.eslint
+    nodePackages.prettier
     pandoc
+    python311Packages.pip
     ripgrep
+    shfmt
     unzip
     vimPlugins.telescope-fzf-native-nvim
 
@@ -166,7 +182,7 @@ in {
 
     # Flatpak
     flatpak
-  ];
+ ];
 
   fonts.fontconfig.enable = true;
 
