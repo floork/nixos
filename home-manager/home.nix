@@ -45,6 +45,7 @@ in {
   home.packages = with pkgs; [
     # hyprland stuff
     dunst
+    swaybg
     swaylock
     waybar
     waypaper
@@ -97,7 +98,7 @@ in {
     playerctl
     sqlite
     translate-shell
-    trashy
+    trash-cli
     xorg.xkill
 
     # Desktop Applications
