@@ -96,6 +96,7 @@ in {
     pavucontrol
     pipewire
     playerctl
+    solaar
     sqlite
     translate-shell
     trash-cli
