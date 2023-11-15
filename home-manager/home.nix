@@ -117,13 +117,15 @@ in {
     obs-studio
     obsidian
     prismlauncher
+    protonmail-bridge
     qbittorrent
     remmina
     slurp
     spotify
-    xfce.thunar
     thunderbird
-    variety
+    webcord
+    whatsapp-for-linux
+    xfce.thunar
     yubikey-manager-qt
     webcord
 
