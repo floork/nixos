@@ -139,6 +139,7 @@ in {
     meson
     mysql-workbench
     nodejs
+    nodejs_20
     openjdk
     python311Packages.pygobject3
     python3
