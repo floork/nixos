@@ -52,11 +52,11 @@
           }
         ];
       }; 
-      nixos = nixpkgs.lib.nixosSystem {
+      laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs system; };
         modules = [
-          ./system/configuration.nix 
+          ./system/laptop.nix 
           hyprland.nixosModules.default
           { programs.hyprland.enable = true; }
           home-manager.nixosModules.home-manager

@@ -146,6 +146,7 @@ in {
     python311Packages.pip
     virt-manager
     vscode
+    yarn
 
     # NeoVim
     deno
