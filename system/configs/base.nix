@@ -3,9 +3,7 @@
 {
   # ENV 
   environment = {
-    variables = {
-      EDITOR = "nvim";
-    };
+    variables = { EDITOR = "nvim"; };
     sessionVariables = rec {
       # Hint Electron apps to use wayland
       NIXOS_OZONE_WL = "1";
@@ -17,9 +15,9 @@
     pathsToLink = [ "/libexec" ];
 
     etc = {
-    "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text =
-      "	bluez_monitor.properties = {\n		[\"bluez5.enable-sbc-xq\"] = true,\n		[\"bluez5.enable-msbc\"] = true,\n		[\"bluez5.enable-hw-volume\"] = true,\n		[\"bluez5.headset-roles\"] = \"[ hsp_hs hsp_ag hfp_hf hfp_ag ]\"\n	}\n";
-  };
+      "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text =
+        "	bluez_monitor.properties = {\n		[\"bluez5.enable-sbc-xq\"] = true,\n		[\"bluez5.enable-msbc\"] = true,\n		[\"bluez5.enable-hw-volume\"] = true,\n		[\"bluez5.headset-roles\"] = \"[ hsp_hs hsp_ag hfp_hf hfp_ag ]\"\n	}\n";
+    };
 
   };
 
@@ -30,14 +28,14 @@
 
     dbus.enable = true;
 
-  xserver = {
-    enable = true;
-    layout = "us";
-    displayManager.gdm = {
+    xserver = {
       enable = true;
-      wayland = true;
+      layout = "us";
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
     };
-  };
 
     picom.enable = true;
 
@@ -48,7 +46,7 @@
     flatpak.enable = true;
 
     gnome.gnome-keyring.enable = true;
-    
+
     devmon.enable = true;
 
     gvfs.enable = true;
@@ -56,18 +54,17 @@
     udisks2.enable = true;
 
     udev.extraRules = ''
-    SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="ntfs", ENV{UDISKS_PRESENTATION_HIDE}="0"
-    SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="vfat", ENV{UDISKS_PRESENTATION_HIDE}="0"
+      SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="ntfs", ENV{UDISKS_PRESENTATION_HIDE}="0"
+      SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="vfat", ENV{UDISKS_PRESENTATION_HIDE}="0"
     '';
   };
- 
+
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback.out ];
-  boot.kernelModules = [
-    "v4l2loopback"
-  ];
+  boot.kernelModules = [ "v4l2loopback" ];
   boot.extraModprobeConfig = ''
     options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
   '';
@@ -126,7 +123,7 @@
     home = "/home/floork";
   };
   users.extraGroups.vboxusers.members = [ "floork" ];
-   
+
   # Window manager
   programs = {
     hyprland = {
@@ -140,9 +137,7 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   # Enable sound with pipewire
@@ -159,9 +154,7 @@
       };
     };
 
-    virtualbox = {
-      host.enable = true;
-    };
+    virtualbox = { host.enable = true; };
   };
 
   # Add additional man pages 

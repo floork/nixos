@@ -36,6 +36,22 @@
 
   in {
     nixosConfigurations = {
+      desktop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs system; };
+        modules = [
+          ./system/desktop.nix 
+          hyprland.nixosModules.default
+          { programs.hyprland.enable = true; }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.floork = import ./home-manager/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
+        ];
+      }; 
       nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs system; };
