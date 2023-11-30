@@ -1,18 +1,15 @@
 { config, pkgs, ... }:
 
-{   
+{
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
     firewall = {
       enable = true;
       checkReversePath = false;
-      allowedTCPPorts = [ ]; 
+      allowedTCPPorts = [ ];
     };
-    nameservers = [
-      "1.1.1.1#one.one.one.one"
-      "1.0.0.1#one.one.one.one"
-    ];
+    nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
 
   };
 
@@ -20,10 +17,7 @@
     enable = true;
     dnssec = "true";
     domains = [ "~." ];
-    fallbackDns = [
-      "1.1.1.1#one.one.one.one"
-      "1.0.0.1#one.one.one.one"
-    ];
+    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
     extraConfig = ''
       DNSOverTLS=yes
     '';

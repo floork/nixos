@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }: 
+{ inputs, config, pkgs, ... }:
 let
   # Install GNOME Keyring and its dependencies
   gnomeKeyringPkgs = pkgs.buildEnv {
@@ -20,19 +20,17 @@ let
   };
 
 in {
-  imports = [
-    inputs.hyprland.homeManagerModules.default
-  ];
+  imports = [ inputs.hyprland.homeManagerModules.default ];
 
   # Info about user and path it manages
   home.username = "floork";
   home.homeDirectory = "/home/floork";
- 
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces breaking changes.
-  home.stateVersion = "23.05";
-  
+  home.stateVersion = "23.11";
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -51,6 +49,10 @@ in {
     waypaper
     wl-clipboard
     wofi
+
+    # theme
+    juno-theme
+    gnome.adwaita-icon-theme
 
     # Terminal Utilities
     curl
@@ -90,6 +92,8 @@ in {
     libiconv
     libnotify
     nixfmt
+    # nix-linter # Currently broken
+    nwg-look
     openssl
     openssl.dev
     p7zip
@@ -189,7 +193,7 @@ in {
 
     # Flatpak
     flatpak
- ];
+  ];
 
   fonts.fontconfig.enable = true;
 

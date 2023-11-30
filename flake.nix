@@ -1,6 +1,6 @@
 {
   description = "My humble Nix config!";
-  
+
   nixConfig = {
     # manage flakes 
     experimental-features = [ "nix-command" "flakes" ];
@@ -25,49 +25,49 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: 
-  let 
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config = { allowUnfree = true; };
-    };
-    lib = nixpkgs.lib;
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
+      lib = nixpkgs.lib;
 
-  in {
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs system; };
-        modules = [
-          ./system/desktop.nix 
-          hyprland.nixosModules.default
-          { programs.hyprland.enable = true; }
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.floork = import ./home-manager/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
-        ];
-      }; 
-      laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs system; };
-        modules = [
-          ./system/laptop.nix 
-          hyprland.nixosModules.default
-          { programs.hyprland.enable = true; }
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.floork = import ./home-manager/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
-        ];
-      }; 
+    in {
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs system; };
+          modules = [
+            ./system/desktop.nix
+            hyprland.nixosModules.default
+            { programs.hyprland.enable = true; }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.floork = import ./home-manager/home.nix;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+            }
+          ];
+        };
+        laptop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs system; };
+          modules = [
+            ./system/laptop.nix
+            hyprland.nixosModules.default
+            { programs.hyprland.enable = true; }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.floork = import ./home-manager/home.nix;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+            }
+          ];
+        };
+      };
     };
-  };
 }

@@ -7,9 +7,7 @@
       defaultEditor = true;
     };
     nix-ld.enable = true;
-    zsh = {
-      enable = true;
-    };
+    zsh = { enable = true; };
     steam = {
       enable = true;
       remotePlay.openFirewall =
