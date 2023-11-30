@@ -5,7 +5,8 @@
 { inputs, config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./desktop/hardware-configuration.nix
     ./configs/networking.nix
     ./configs/packages.nix

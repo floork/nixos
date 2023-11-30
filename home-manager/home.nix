@@ -19,7 +19,8 @@ let
     };
   };
 
-in {
+in
+{
   imports = [ inputs.hyprland.homeManagerModules.default ];
 
   # Info about user and path it manages
