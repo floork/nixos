@@ -133,6 +133,7 @@ in {
     # Development
     beekeeper-studio
     cmake
+    go
     libratbag
     lua
     lua-language-server
