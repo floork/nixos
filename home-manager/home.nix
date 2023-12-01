@@ -56,6 +56,7 @@ in
     gnome.adwaita-icon-theme
 
     # Terminal Utilities
+    brightnessctl
     curl
     lsd
     tree
@@ -80,6 +81,7 @@ in
     bluez-tools
     blueman
     docker
+    emacsPackages.adwaita-dark-theme
     emote
     feh
     fprintd
@@ -92,6 +94,7 @@ in
     killall
     libiconv
     libnotify
+    libsForQt5.qt5ct
     nixfmt
     # nix-linter # Currently broken
     nwg-look
