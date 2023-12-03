@@ -70,6 +70,7 @@ in
     util-linux
     vim
     wget
+    xorg.xhost
     zsh-autosuggestions
     zsh-syntax-highlighting
 
@@ -96,7 +97,6 @@ in
     libnotify
     libsForQt5.qt5ct
     nixfmt
-    # nix-linter # Currently broken
     nwg-look
     openssl
     openssl.dev
@@ -125,6 +125,7 @@ in
     networkmanagerapplet
     obs-studio
     obsidian
+    piper
     prismlauncher
     protonmail-bridge
     qbittorrent
@@ -197,6 +198,10 @@ in
 
     # Flatpak
     flatpak
+
+    # Wine
+    wineWow64Packages.full
+    # wineWow64Packages.waylandFull
   ];
 
   fonts.fontconfig.enable = true;
