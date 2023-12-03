@@ -34,7 +34,8 @@
       };
       lib = nixpkgs.lib;
 
-    in {
+    in
+    {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
