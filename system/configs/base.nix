@@ -56,6 +56,8 @@
       SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="ntfs", ENV{UDISKS_PRESENTATION_HIDE}="0"
       SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="vfat", ENV{UDISKS_PRESENTATION_HIDE}="0"
     '';
+
+    ratbagd.enable = true;
   };
 
   # Bootloader.
