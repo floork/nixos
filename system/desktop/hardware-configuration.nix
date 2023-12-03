@@ -21,6 +21,11 @@
     fsType = "vfat";
   };
 
+  fileSystems."/home/floork/2nd_drive" = {
+    device = "/dev/nvme1n1p1";
+    fsType = "ext4";
+  };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
