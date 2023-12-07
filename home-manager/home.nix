@@ -58,6 +58,7 @@ in
     # Terminal Utilities
     brightnessctl
     curl
+    dig
     lsd
     tree
     fish
@@ -117,6 +118,7 @@ in
     element-desktop
     flameshot
     gimp
+    gnome.gnome-disk-utility
     insync
     kitty
     libsForQt5.kruler
@@ -151,6 +153,7 @@ in
     nodejs
     nodejs_20
     openjdk
+    poetry
     python311Packages.pygobject3
     python3
     python311Packages.pip
