@@ -135,6 +135,7 @@ in
     slurp
     spotify
     thunderbird
+    tmux
     webcord
     whatsapp-for-linux
     xfce.thunar
