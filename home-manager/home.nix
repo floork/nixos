@@ -125,7 +125,6 @@ in
     libreoffice
     lutris
     networkmanagerapplet
-    obs-studio
     obsidian
     piper
     prismlauncher
