@@ -115,6 +115,7 @@ in
     bottles
     brave
     chromium
+    discord
     element-desktop
     flameshot
     gimp
@@ -135,11 +136,9 @@ in
     spotify
     thunderbird
     tmux
-    webcord
     whatsapp-for-linux
     xfce.thunar
     yubikey-manager-qt
-    webcord
 
     # Development
     beekeeper-studio
