@@ -120,6 +120,7 @@ in
     flameshot
     gimp
     gnome.gnome-disk-utility
+    grim
     insync
     kitty
     libsForQt5.kruler
