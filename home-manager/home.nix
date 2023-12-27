@@ -71,6 +71,7 @@ in
     util-linux
     vim
     wget
+    xorg.xev
     xorg.xhost
     zsh-autosuggestions
     zsh-syntax-highlighting
@@ -135,6 +136,7 @@ in
     remmina
     slurp
     spotify
+    texmaker
     thunderbird
     tmux
     whatsapp-for-linux
@@ -142,8 +144,10 @@ in
     yubikey-manager-qt
 
     # Development
+    ansible
     beekeeper-studio
     cmake
+    delta # git diff
     go
     libratbag
     lua
