@@ -141,6 +141,7 @@ in
     tmux
     whatsapp-for-linux
     xfce.thunar
+    xfce.tumbler
     yubikey-manager-qt
 
     # Development
