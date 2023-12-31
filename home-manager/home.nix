@@ -88,6 +88,7 @@ in
     emote
     feh
     fprintd
+    fuse
     gcc
     git
     graphviz

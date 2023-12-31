@@ -61,13 +61,19 @@
   };
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback.out ];
-  boot.kernelModules = [ "v4l2loopback" ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
-  '';
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+      };
+      efi.canTouchEfiVariables = true;
+    };
+    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback.out ];
+    kernelModules = [ "v4l2loopback" ];
+    extraModprobeConfig = ''
+      options fuse v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+    '';
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
