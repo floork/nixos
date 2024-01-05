@@ -167,6 +167,7 @@ in
     lua-language-server
     ## python
     poetry
+    pyenv
     python311Packages.pygobject3
     python3
     python311Packages.pip
