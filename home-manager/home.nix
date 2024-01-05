@@ -140,32 +140,42 @@ in
     texmaker
     thunderbird
     tmux
+    virt-manager
     whatsapp-for-linux
     xfce.thunar
     xfce.tumbler
     yubikey-manager-qt
 
     # Development
+    ## automation
     ansible
-    beekeeper-studio
+    ## c/c++
     cmake
-    delta # git diff
-    go
-    libratbag
-    lua
-    lua-language-server
     meson
-    mysql-workbench
+    ## gamedev
+    libratbag
+    ## go
+    go
+    ## java
+    openjdk
+    ## js
     nodejs
     nodejs_20
-    openjdk
+    yarn
+    ## lua
+    lua
+    lua-language-server
+    ## python
     poetry
     python311Packages.pygobject3
     python3
     python311Packages.pip
-    virt-manager
+    ## sql
+    beekeeper-studio
+    mysql-workbench
+    ## editor
+    neovim
     vscode
-    yarn
 
     # NeoVim
     deno
@@ -176,7 +186,6 @@ in
     lazygit
     luajitPackages.lua-lsp
     luajitPackages.luarocks-nix
-    neovim
     nodePackages.eslint
     nodePackages.prettier
     pandoc
@@ -210,7 +219,6 @@ in
 
     # Wine
     wineWow64Packages.full
-    # wineWow64Packages.waylandFull
   ];
 
   fonts.fontconfig.enable = true;
