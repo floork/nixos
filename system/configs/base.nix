@@ -167,6 +167,13 @@
   # Add additional man pages 
   documentation.dev.enable = true;
 
+  system.activationScripts.binbash = {
+    deps = [ "binsh" ];
+    text = ''
+      ln -s /bin/sh /bin/bash
+      ln -s /bin/sh /bin/zsh
+    '';
+  };
   # Automatic Garbage Collection
   nix.gc = {
     automatic = true;
