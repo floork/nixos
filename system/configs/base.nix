@@ -57,6 +57,7 @@
       SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="vfat", ENV{UDISKS_PRESENTATION_HIDE}="0"
     '';
 
+    printing.enable = true;
     ratbagd.enable = true;
   };
 

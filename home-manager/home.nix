@@ -147,8 +147,6 @@ in
     yubikey-manager-qt
 
     # Development
-    ## automation
-    ansible
     ## c/c++
     cmake
     meson
@@ -174,7 +172,9 @@ in
     ## sql
     beekeeper-studio
     mysql-workbench
-    ## editor
+    ## tools
+    ansible
+    hugo
     neovim
     vscode
 
