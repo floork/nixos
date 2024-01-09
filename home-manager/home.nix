@@ -119,6 +119,7 @@ in
     chromium
     discord
     element-desktop
+    firefox
     flameshot
     gimp
     gnome.gnome-disk-utility
