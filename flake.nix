@@ -24,12 +24,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-  # Wezterm
-  own-flakes.url = "github:floork/own-flakes";
-  wezterm = {
-    url = "${own-flakes}/wezterm/nix";
-    flake = true;
-  };
+    # Wezterm
+    wezterm.url = "/etc/nixos/own-flakes/wezterm/nix";
+    wezterm.inputs = { nixpkgs.follows = "nixpkgs"; };
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
@@ -62,7 +59,10 @@
               home-manager.extraSpecialArgs = { inherit inputs; };
             }
 
-            { environment.systemPackages = [ weztermFlake.packages.${system}.wezterm ]; }
+            {
+              environment.systemPackages =
+                [ weztermFlake.packages.${system}.wezterm ];
+            }
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -80,7 +80,10 @@
               home-manager.extraSpecialArgs = { inherit inputs; };
             }
 
-            { environment.systemPackages = [ weztermFlake.packages.${system}.wezterm ]; }
+            {
+              environment.systemPackages =
+                [ weztermFlake.packages.${system}.wezterm ];
+            }
           ];
         };
       };
