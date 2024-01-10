@@ -23,6 +23,13 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+  # Wezterm
+  own-flakes.url = "github:floork/own-flakes";
+  wezterm = {
+    url = "${own-flakes}/wezterm/nix";
+    flake = true;
+  };
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
