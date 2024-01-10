@@ -34,6 +34,9 @@
       };
       lib = nixpkgs.lib;
 
+      # wezterm
+      weztermFlake = import inputs.own-flakes.wezterm;
+
     in
     {
       nixosConfigurations = {
@@ -51,6 +54,8 @@
               home-manager.users.floork = import ./home-manager/home.nix;
               home-manager.extraSpecialArgs = { inherit inputs; };
             }
+
+            { environment.systemPackages = [ weztermFlake.packages.${system}.wezterm ]; }
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -67,6 +72,8 @@
               home-manager.users.floork = import ./home-manager/home.nix;
               home-manager.extraSpecialArgs = { inherit inputs; };
             }
+
+            { environment.systemPackages = [ weztermFlake.packages.${system}.wezterm ]; }
           ];
         };
       };
