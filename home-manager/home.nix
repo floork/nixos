@@ -142,7 +142,6 @@ in
     thunderbird
     tmux
     virt-manager
-    whatsapp-for-linux
     xfce.thunar
     xfce.tumbler
     yubikey-manager-qt
