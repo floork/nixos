@@ -140,13 +140,6 @@
     waybar.enable = true;
   };
 
-  # Helps enable screen sharing
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
-
   # Enable sound with pipewire
   # sound.enable = true;
   security.rtkit.enable = true;
