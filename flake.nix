@@ -23,9 +23,6 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Wezterm terminal emulator --> in the future
-    # wezterm.url = "github:wez/wezterm";
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
@@ -54,9 +51,6 @@
               home-manager.users.floork = import ./home-manager/home.nix;
               home-manager.extraSpecialArgs = { inherit inputs; };
             }
-
-            # wezterm
-            # wezterm.package
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -73,9 +67,6 @@
               home-manager.users.floork = import ./home-manager/home.nix;
               home-manager.extraSpecialArgs = { inherit inputs; };
             }
-
-            # wezterm
-            # wezterm.package
           ];
         };
       };

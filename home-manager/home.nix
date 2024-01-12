@@ -66,7 +66,6 @@ in
     htop
     neofetch
     pkg-config
-    rustup
     tldr
     util-linux
     vim
