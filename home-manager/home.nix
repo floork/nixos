@@ -44,6 +44,8 @@ in
   home.packages = with pkgs; [
     # hyprland stuff
     dunst
+    grim
+    slurp
     swaybg
     swaylock
     waybar
@@ -61,7 +63,6 @@ in
     dig
     lsd
     tree
-    fish
     gh
     htop
     neofetch
@@ -83,7 +84,6 @@ in
     bluez-tools
     blueman
     docker
-    emacsPackages.adwaita-dark-theme
     emote
     feh
     fprintd
@@ -93,7 +93,6 @@ in
     graphviz
     gparted
     inxi
-    kdeconnect
     killall
     libiconv
     libnotify
@@ -106,41 +105,33 @@ in
     pavucontrol
     pipewire
     playerctl
-    solaar
     sqlite
     translate-shell
     trash-cli
     xorg.xkill
 
     # Desktop Applications
-    bottles
-    brave
     chromium
     discord
     element-desktop
     firefox
-    flameshot
     gimp
     gnome.gnome-disk-utility
-    grim
     insync
-    kitty
     libsForQt5.kruler
     libreoffice
-    lutris
     networkmanagerapplet
     obsidian
-    piper
     prismlauncher
     protonmail-bridge
     qbittorrent
     remmina
-    slurp
     spotify
     texmaker
     thunderbird
     tmux
     virt-manager
+    wezterm
     xfce.thunar
     xfce.tumbler
     yubikey-manager-qt
@@ -209,7 +200,6 @@ in
     gnomeKeyringPkgs
     gnome3.gnome-tweaks
     gnupg
-    openrgb
     peek
     pinentry
     starship

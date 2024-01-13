@@ -163,8 +163,12 @@
   system.activationScripts.binbash = {
     deps = [ "binsh" ];
     text = ''
-      ln -s /bin/sh /bin/bash
-      ln -s /bin/sh /bin/zsh
+      if ! [ -e /bin/bash ]; then
+        ln -s /bin/sh /bin/bash
+      fi
+      if ! [ -e /bin/zsh ]; then
+        ln -s /bin/sh /bin/zsh
+      fi
     '';
   };
   # Automatic Garbage Collection
