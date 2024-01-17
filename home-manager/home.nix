@@ -114,7 +114,8 @@ in
     chromium
     discord
     element-desktop
-    firefox
+    # firefox # moved to floorp for now
+    floorp
     gimp
     gnome.gnome-disk-utility
     insync
