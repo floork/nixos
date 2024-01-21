@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, system, config, pkgs, ... }:
 let
   # Install GNOME Keyring and its dependencies
   gnomeKeyringPkgs = pkgs.buildEnv {
@@ -18,6 +18,8 @@ let
       allowedUDPPorts = [ 1714 ];
     };
   };
+
+  wezterm-custom = inputs.wezterm.packages."${system}".default;
 
 in
 {
@@ -132,7 +134,11 @@ in
     thunderbird
     tmux
     virt-manager
-    wezterm
+    wezterm-custom
+
+    kitty
+
+
     xfce.thunar
     xfce.tumbler
     yubikey-manager-qt
