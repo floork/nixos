@@ -124,6 +124,7 @@ in
     libsForQt5.kruler
     libreoffice
     networkmanagerapplet
+    obs-studio
     obsidian
     prismlauncher
     protonmail-bridge
