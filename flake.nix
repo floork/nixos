@@ -16,6 +16,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
     # Hyprland window manager 
     hyprland.url = "github:hyprwm/Hyprland";
     # Community scripts and utilities for Hypr projects
@@ -31,7 +33,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, hyprland, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -57,6 +59,7 @@
               home-manager.users.floork = import ./home-manager/home.nix;
               home-manager.extraSpecialArgs = { inherit inputs system; };
             }
+            nix-flatpak.nixosModules.nix-flatpak
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -73,6 +76,7 @@
               home-manager.users.floork = import ./home-manager/home.nix;
               home-manager.extraSpecialArgs = { inherit inputs system; };
             }
+            nix-flatpak.nixosModules.nix-flatpak
           ];
         };
       };

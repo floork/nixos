@@ -124,7 +124,6 @@ in
     libsForQt5.kruler
     libreoffice
     networkmanagerapplet
-    obs-studio
     obsidian
     prismlauncher
     protonmail-bridge
@@ -211,9 +210,6 @@ in
     peek
     pinentry
     starship
-
-    # Flatpak
-    flatpak
 
     # Wine
     wineWow64Packages.full

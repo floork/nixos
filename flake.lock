@@ -156,6 +156,21 @@
         "type": "github"
       }
     },
+    "nix-flatpak": {
+      "locked": {
+        "lastModified": 1705758212,
+        "narHash": "sha256-96kbUcT7hvFPhs5vHqSLAQOCwsRojlmWa0+VpR6lrrE=",
+        "owner": "gmodena",
+        "repo": "nix-flatpak",
+        "rev": "09d2dd72de3b9a7ef71f3013a15d34c649b83277",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gmodena",
+        "repo": "nix-flatpak",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1700612854,
@@ -193,6 +208,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-contrib": "hyprland-contrib",
+        "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_2",
         "wezterm": "wezterm"
       }
