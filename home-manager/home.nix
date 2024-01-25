@@ -122,7 +122,6 @@ in
     gnome.gnome-disk-utility
     insync
     libsForQt5.kruler
-    libreoffice
     networkmanagerapplet
     obsidian
     prismlauncher

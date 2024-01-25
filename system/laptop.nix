@@ -13,8 +13,20 @@
     ./configs/base.nix
   ];
 
-  users.users.floork.packages = with pkgs; [
+  services.flatpak = {
+    enable = true;
+    # remotes = [{
+    #   name = "flathub-beta";
+    #   location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+    # }]; # Uncomment to enable flathub-beta
+    packages = [
+      "org.libreoffice.LibreOffice"
+    ];
+    update.onActivation = true;
+  };
 
+  users.users.floork.packages = with pkgs; [
+    acpi
   ];
 
   # This value determines the NixOS release from which the default

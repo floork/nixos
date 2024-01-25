@@ -58,18 +58,6 @@
     printing.enable = true;
     ratbagd.enable = true;
 
-    flatpak = {
-      enable = true;
-      # remotes = [{
-      #   name = "flathub-beta";
-      #   location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
-      # }]; # Uncomment to enable flathub-beta
-      packages = [
-        "com.obsproject.Studio"
-        "com.obsproject.Studio.Plugin.BackgroundRemoval"
-      ];
-      update.onActivation = true;
-    };
   };
 
   # Bootloader.
