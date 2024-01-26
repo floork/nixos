@@ -139,6 +139,12 @@
     waybar.enable = true;
   };
 
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
+
   # Enable sound with pipewire
   # sound.enable = true;
   security.rtkit.enable = true;

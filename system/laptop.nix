@@ -21,6 +21,7 @@
     # }]; # Uncomment to enable flathub-beta
     packages = [
       "org.libreoffice.LibreOffice"
+      "com.hunterwittenborn.Celeste"
     ];
     update.onActivation = true;
   };
