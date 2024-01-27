@@ -168,6 +168,8 @@ in
     ## sql
     beekeeper-studio
     mysql-workbench
+    ## zig
+    zig
     ## tools
     ansible
     hugo
