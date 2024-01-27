@@ -42,7 +42,7 @@
 
     fprintd.enable = true;
 
-    gnome.gnome-keyring.enable = true;
+    gnome3.gnome-keyring.enable = true;
 
     devmon.enable = true;
 
@@ -105,10 +105,14 @@
     };
   };
 
-  security.pam.services.swaylock = {
-    text = ''
-      auth include login
-    '';
+  security = {
+    pam.services.swaylock = {
+      text = ''
+        auth include login
+      '';
+    };
+    pam.services.login.enableGnomeKeyring = true;
+    rtkit.enable = true;
   };
 
   users.users.floork = {
@@ -144,10 +148,6 @@
     platformTheme = "gnome";
     style = "adwaita-dark";
   };
-
-  # Enable sound with pipewire
-  # sound.enable = true;
-  security.rtkit.enable = true;
 
   # Enable Docker
   virtualisation = {

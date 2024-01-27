@@ -1,11 +1,5 @@
 { inputs, system, config, pkgs, ... }:
 let
-  # Install GNOME Keyring and its dependencies
-  gnomeKeyringPkgs = pkgs.buildEnv {
-    name = "gnome-keyring-packages";
-    paths = [ pkgs.gnome3.gnome-keyring ];
-  };
-
   # Define firewall rules to allow KDE Connect
   firewallRules = {
     allowedServices =
@@ -205,7 +199,6 @@ in
     # Miscellaneous
     clipman
     duplicati
-    gnomeKeyringPkgs
     gnome3.gnome-tweaks
     gnupg
     peek
