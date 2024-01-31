@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.1.0";
 
     # Hyprland window manager 
     hyprland.url = "github:hyprwm/Hyprland";

@@ -36,13 +36,19 @@
       };
     };
 
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+
     picom.enable = true;
 
     logind.extraConfig = "HandleLidSwitch=hibernate";
 
     fprintd.enable = true;
 
-    gnome3.gnome-keyring.enable = true;
+    gnome.gnome-keyring.enable = true;
 
     devmon.enable = true;
 
@@ -58,6 +64,33 @@
     printing.enable = true;
     ratbagd.enable = true;
 
+    flatpak = {
+      enable = true;
+      # remotes = [{
+      #   name = "flathub-beta";
+      #   location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+      # }]; # Uncomment to enable flathub-beta
+      packages = [
+        "com.discordapp.Discord"
+        "com.obsproject.Studio"
+        "com.obsproject.Studio.Plugin.BackgroundRemoval"
+        "org.libreoffice.LibreOffice"
+      ];
+      update.onActivation = true;
+    };
+
+
+  };
+
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+      wlr.enable = true;
+    };
   };
 
   # Bootloader.
@@ -93,11 +126,11 @@
   };
 
   hardware = {
-    pulseaudio = {
-      enable = true;
-      support32Bit = true;
-      package = pkgs.pulseaudioFull;
-    };
+    # pulseaudio = {
+    #   enable = true;
+    #   support32Bit = true;
+    #   package = pkgs.pulseaudioFull;
+    # };
 
     bluetooth = {
       enable = true;

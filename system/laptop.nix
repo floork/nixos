@@ -13,19 +13,6 @@
     ./configs/base.nix
   ];
 
-  services.flatpak = {
-    enable = true;
-    # remotes = [{
-    #   name = "flathub-beta";
-    #   location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
-    # }]; # Uncomment to enable flathub-beta
-    packages = [
-      "org.libreoffice.LibreOffice"
-      "com.hunterwittenborn.Celeste"
-    ];
-    update.onActivation = true;
-  };
-
   users.users.floork.packages = with pkgs; [
     acpi
   ];

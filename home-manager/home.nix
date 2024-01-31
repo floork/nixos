@@ -41,17 +41,19 @@ in
     # hyprland stuff
     dunst
     grim
+    hyprland-protocols
     slurp
     swaybg
     swaylock
     waybar
     waypaper
+    wireplumber
     wl-clipboard
     wofi
-
-    # theme
-    juno-theme
-    gnome.adwaita-icon-theme
+    xdg-desktop-portal
+    xdg-desktop-portal-wlr
+    xdg-desktop-portal-hyprland
+    xwaylandvideobridge
 
     # Terminal Utilities
     brightnessctl
@@ -99,7 +101,6 @@ in
     openssl.dev
     p7zip
     pavucontrol
-    pipewire
     playerctl
     sqlite
     translate-shell
@@ -108,7 +109,6 @@ in
 
     # Desktop Applications
     chromium
-    discord
     element-desktop
     # firefox # moved to floorp for now
     floorp
@@ -117,6 +117,7 @@ in
     insync
     libsForQt5.kruler
     networkmanagerapplet
+    obs-studio
     obsidian
     prismlauncher
     protonmail-bridge

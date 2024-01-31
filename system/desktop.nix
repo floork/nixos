@@ -35,21 +35,6 @@
       true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  services.flatpak = {
-    enable = true;
-    # remotes = [{
-    #   name = "flathub-beta";
-    #   location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
-    # }]; # Uncomment to enable flathub-beta
-    packages = [
-      "com.obsproject.Studio"
-      "com.obsproject.Studio.Plugin.BackgroundRemoval"
-      "org.libreoffice.LibreOffice"
-    ];
-    update.onActivation = true;
-  };
-
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
