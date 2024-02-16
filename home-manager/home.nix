@@ -184,7 +184,7 @@ in
     nodePackages.prettier
     pandoc
     python311Packages.pip
-    ripgrep
+    # ripgrep # removed in favour of fd
     shfmt
     unzip
     vimPlugins.telescope-fzf-native-nvim
