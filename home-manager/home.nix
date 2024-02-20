@@ -108,10 +108,9 @@ in
     xorg.xkill
 
     # Desktop Applications
+    brave
     chromium
     element-desktop
-    # firefox # moved to floorp for now
-    floorp
     gimp
     gnome.gnome-disk-utility
     insync
@@ -129,10 +128,6 @@ in
     tmux
     virt-manager
     wezterm-custom
-
-    kitty
-
-
     xfce.thunar
     xfce.tumbler
     yubikey-manager-qt
