@@ -223,4 +223,23 @@ in
       package = pkgs.gnome.gnome-themes-extra;
     };
   };
+
+  #
+  # home.pointerCursor =
+  #   let
+  #     getFromLocal = path: name: {
+  #       gtk.enable = true;
+  #       x11.enable = true;
+  #       name = name;
+  #       size = 48;
+  #       package =
+  #         pkgs.runCommand "moveUp" { } ''
+  #           mkdir -p $out/share/icons
+  #           cp ${path} $out/share/icons/${name}
+  #         '';
+  #     };
+  #   in
+  #   getFromLocal # or getFrom
+  #     "/etc/nixos/assets/Future-black-cursors.tar.gz"
+  #     "Future-black-cursors";
 }
