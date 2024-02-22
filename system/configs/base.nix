@@ -48,7 +48,7 @@
 
     fprintd.enable = true;
 
-    gnome.gnome-keyring.enable = true;
+    gnome3.gnome-keyring.enable = true;
 
     devmon.enable = true;
 
