@@ -104,6 +104,7 @@ in
     translate-shell
     trash-cli
     xorg.xkill
+    zip
 
     # Desktop Applications
     brave
