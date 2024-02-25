@@ -50,8 +50,6 @@ in
     wireplumber
     wl-clipboard
     wofi
-    xdg-desktop-portal
-    xdg-desktop-portal-wlr
     xdg-desktop-portal-hyprland
     xwaylandvideobridge
 
@@ -179,7 +177,7 @@ in
     nodePackages.prettier
     pandoc
     python311Packages.pip
-    # ripgrep # removed in favour of fd
+    ripgrep # needed for telescope-fzf
     shfmt
     unzip
     vimPlugins.telescope-fzf-native-nvim
@@ -195,7 +193,6 @@ in
     # Miscellaneous
     clipman
     duplicati
-    gnome3.gnome-tweaks
     gnupg
     peek
     pinentry
