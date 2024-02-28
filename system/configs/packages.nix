@@ -9,6 +9,7 @@
     nix-ld.enable = true;
     zsh = { enable = true; };
   };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

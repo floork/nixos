@@ -47,7 +47,6 @@ in
     swaylock
     waybar
     waypaper
-    wireplumber
     wl-clipboard
     wofi
     xdg-desktop-portal-hyprland

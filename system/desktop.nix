@@ -25,6 +25,8 @@
 
     # Miscellanious
     openrgb
+
+    warp-terminal
   ];
 
   programs.steam = {
