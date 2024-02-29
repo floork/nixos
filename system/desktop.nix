@@ -15,7 +15,6 @@
 
   users.users.floork.packages = with pkgs; [
     # System Utilities
-    kdeconnect
     solaar
 
     # Desktop Applications

@@ -1,18 +1,6 @@
 { inputs, system, config, pkgs, ... }:
 let
-  # Define firewall rules to allow KDE Connect
-  firewallRules = {
-    allowedServices =
-      [ "kdeconnect" ]; # Create a service definition for KDE Connect
-    kdeconnect = {
-      description = "KDE Connect communication";
-      localPort = [ 1714 1716 ]; # UDP and TCP ports used by KDE Connect
-      remotePort = [ 1714 1716 ];
-      allowedTCPPorts = [ 1716 ]; # You can restrict this further if needed
-      allowedUDPPorts = [ 1714 ];
-    };
-  };
-
+  # Wezterm as flake
   wezterm-custom = inputs.wezterm.packages."${system}".default;
 
 in
