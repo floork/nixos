@@ -69,6 +69,7 @@ in
     killall
     libiconv
     libnotify
+    libsForQt5.okular
     libsForQt5.qt5ct
     nixfmt
     nwg-look
