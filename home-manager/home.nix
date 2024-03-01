@@ -99,6 +99,7 @@ in
     thunderbird
     tmux
     virt-manager
+    warp-terminal
     wezterm-custom
     xfce.thunar
     xfce.tumbler
