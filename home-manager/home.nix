@@ -2,19 +2,9 @@
 let
   # Wezterm as flake
   wezterm-custom = inputs.wezterm.packages."${system}".default;
-
 in
 {
   imports = [ inputs.hyprland.homeManagerModules.default ];
-
-  # Info about user and path it manages
-  home.username = "floork";
-  home.homeDirectory = "/home/floork";
-
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces breaking changes.
-  home.stateVersion = "24.05";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -99,15 +89,10 @@ in
     element-desktop
     gimp
     gnome.gnome-disk-utility
-    insync
     libsForQt5.kruler
     networkmanagerapplet
     obs-studio
     obsidian
-    prismlauncher
-    protonmail-bridge
-    qbittorrent
-    remmina
     spotify
     texmaker
     thunderbird
@@ -122,8 +107,6 @@ in
     ## c/c++
     cmake
     meson
-    ## gamedev
-    libratbag
     ## go
     go
     ## java
@@ -180,14 +163,10 @@ in
 
     # Miscellaneous
     clipman
-    duplicati
     gnupg
     peek
     pinentry
     starship
-
-    # Wine
-    wineWow64Packages.full
   ];
 
   fonts.fontconfig.enable = true;

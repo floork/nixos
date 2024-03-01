@@ -56,7 +56,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.floork = import ./home-manager/home.nix;
+              home-manager.users.floork = import ./home-manager/personal.nix;
               home-manager.extraSpecialArgs = { inherit inputs system; };
             }
             nix-flatpak.nixosModules.nix-flatpak
@@ -73,7 +73,24 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.floork = import ./home-manager/home.nix;
+              home-manager.users.floork = import ./home-manager/personal.nix;
+              home-manager.extraSpecialArgs = { inherit inputs system; };
+            }
+            nix-flatpak.nixosModules.nix-flatpak
+          ];
+        };
+        work = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs system; };
+          modules = [
+            ./system/work.nix
+            hyprland.nixosModules.default
+            { programs.hyprland.enable = true; }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.flmr799e = import ./home-manager/work.nix;
               home-manager.extraSpecialArgs = { inherit inputs system; };
             }
             nix-flatpak.nixosModules.nix-flatpak

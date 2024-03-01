@@ -146,25 +146,6 @@
     rtkit.enable = true;
   };
 
-  users.users.floork = {
-    isNormalUser = true;
-    description = "floork";
-    shell = pkgs.zsh;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "audio"
-      "pulse"
-      "docker"
-      ''
-        libvirtd
-      ''
-      "plugdev"
-    ];
-    home = "/home/floork";
-  };
-  users.extraGroups.vboxusers.members = [ "floork" ];
-
   # Window manager
   programs = {
     hyprland = {

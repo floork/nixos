@@ -13,6 +13,25 @@
     ./configs/base.nix
   ];
 
+  users.users.floork = {
+    isNormalUser = true;
+    description = "floork";
+    shell = pkgs.zsh;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "pulse"
+      "docker"
+      ''
+        libvirtd
+      ''
+      "plugdev"
+    ];
+    home = "/home/floork";
+  };
+  users.extraGroups.vboxusers.members = [ "floork" ];
+
   users.users.floork.packages = with pkgs; [
     acpi
   ];

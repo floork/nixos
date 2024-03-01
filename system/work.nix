@@ -7,15 +7,15 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./desktop/hardware-configuration.nix
+    ./work/hardware-configuration.nix
     ./configs/networking.nix
     ./configs/packages.nix
     ./configs/base.nix
   ];
 
-  users.users.floork = {
+  users.users.flmr799e = {
     isNormalUser = true;
-    description = "floork";
+    description = "flmr799e";
     shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
@@ -28,41 +28,13 @@
       ''
       "plugdev"
     ];
-    home = "/home/floork";
+    home = "/home/flmr799e";
   };
-  users.extraGroups.vboxusers.members = [ "floork" ];
 
-  users.users.floork.packages = with pkgs; [
-    # System Utilities
-    solaar
+  users.extraGroups.vboxusers.members = [ "flmr799e" ];
 
-    # Desktop Applications
-    bottles
-    lutris
-    piper
-    prismlauncher
-    protonmail-bridge
-    qbittorrent
-
-    # Development
-    ## gamedev
-    libratbag
-
-    # Miscellanious
-    openrgb
-    duplicati
-
-    # Wine
-    wineWow64Packages.full
+  users.users.flmr799e.packages = with pkgs; [
   ];
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall =
-      true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall =
-      true; # Open ports in the firewall for Source Dedicated Server
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
