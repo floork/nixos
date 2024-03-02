@@ -2,6 +2,9 @@
 let
   # Wezterm as flake
   wezterm-custom = inputs.wezterm.packages."${system}".default;
+
+  # Grimblast
+  grimblast-custom = inputs.hyprland-contrib.packages.${pkgs.system}.grimblast;
 in
 {
   imports = [ inputs.hyprland.homeManagerModules.default ];
@@ -19,6 +22,7 @@ in
     # hyprland stuff
     dunst
     grim
+    grimblast-custom
     hyprland-protocols
     slurp
     swaybg
