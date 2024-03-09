@@ -94,6 +94,7 @@ in
     element-desktop
     gimp
     gnome.gnome-disk-utility
+    localsend
     libsForQt5.kruler
     networkmanagerapplet
     obs-studio
