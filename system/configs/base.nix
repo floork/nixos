@@ -13,6 +13,9 @@
     shells = with pkgs; [ zsh ];
 
     pathsToLink = [ "/libexec" ];
+    systemPackages = with pkgs; [
+      coreutils
+    ];
   };
 
   # List services that you want to enable:
@@ -177,17 +180,23 @@
   # Add additional man pages 
   documentation.dev.enable = true;
 
-  system.activationScripts.binbash = {
-    deps = [ "binsh" ];
-    text = ''
-      if ! [ -e /bin/bash ]; then
-        ln -s /bin/sh /bin/bash
-      fi
-      if ! [ -e /bin/zsh ]; then
-        ln -s /bin/sh /bin/zsh
-      fi
-    '';
+  system.activationScripts = {
+    binbash = {
+      deps = [ "binsh" ];
+      text = ''
+        if ! [ -e /bin/bash ]; then
+          ln -s /bin/sh /bin/bash
+        fi
+        if ! [ -e /bin/zsh ]; then
+          ln -s /bin/sh /bin/zsh
+        fi
+        if [ -e "/usr/bin/env" ] && [ ! -e "/bin/env" ]; then
+          ln -s /usr/bin/env /bin/env
+        fi
+      '';
+    };
   };
+
   # Automatic Garbage Collection
   nix.gc = {
     automatic = true;
