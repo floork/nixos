@@ -89,6 +89,7 @@ in
     zip
 
     # Desktop Applications
+    betterbird
     brave
     chromium
     element-desktop
@@ -101,7 +102,7 @@ in
     obsidian
     spotify
     texmaker
-    thunderbird
+    # thunderbird # now using betterbird
     tmux
     virt-manager
     warp-terminal
