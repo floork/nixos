@@ -5,8 +5,7 @@ let
 
   # Grimblast
   grimblast-custom = inputs.hyprland-contrib.packages.${pkgs.system}.grimblast;
-in
-{
+in {
   imports = [ inputs.hyprland.homeManagerModules.default ];
 
   # Let Home Manager install and manage itself.
@@ -114,9 +113,11 @@ in
     # Development
     ## c/c++
     cmake
+    neocmakelsp
     meson
     ## go
     go
+    gopls
     ## java
     openjdk
     ## js
@@ -126,12 +127,16 @@ in
     ## lua
     lua
     lua-language-server
+    ## nix
+    nil
     ## python
     poetry
     pyenv
     python311Packages.pygobject3
     python3
     python311Packages.pip
+    ## rust
+    rustup
     ## sql
     beekeeper-studio
     mysql-workbench
@@ -181,11 +186,10 @@ in
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+      picture-uri-dark =
+        "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
     };
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
+    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
   };
 
   gtk = {
