@@ -54,6 +54,9 @@
 
     # Wine
     wineWow64Packages.full
+
+
+    wezterm
   ];
 
   programs.steam = {
