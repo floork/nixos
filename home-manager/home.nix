@@ -31,6 +31,7 @@ in
     waypaper
     wl-clipboard
     wofi
+    wttrbar
     xdg-desktop-portal-hyprland
     xwaylandvideobridge
 
