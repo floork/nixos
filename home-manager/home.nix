@@ -26,7 +26,6 @@ in
     hyprland-protocols
     slurp
     swaybg
-    swaylock
     waybar
     waypaper
     wl-clipboard
