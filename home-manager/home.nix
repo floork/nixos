@@ -23,6 +23,7 @@ in {
     grim
     grimblast-custom
     hyprland-protocols
+    hyprlock
     slurp
     swaybg
     waybar

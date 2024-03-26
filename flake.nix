@@ -26,6 +26,11 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # hyprlock
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # WezTerm package
     wezterm = {
@@ -43,8 +48,7 @@
       };
       lib = nixpkgs.lib;
 
-    in
-    {
+    in {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;

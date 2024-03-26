@@ -13,9 +13,7 @@
     shells = with pkgs; [ zsh ];
 
     pathsToLink = [ "/libexec" ];
-    systemPackages = with pkgs; [
-      coreutils
-    ];
+    systemPackages = with pkgs; [ coreutils ];
   };
 
   # List services that you want to enable:
@@ -27,9 +25,7 @@
 
     xserver = {
       enable = true;
-      xkb = {
-        layout = "us";
-      };
+      xkb = { layout = "us"; };
       displayManager.gdm = {
         enable = true;
         wayland = true;
@@ -80,7 +76,6 @@
       update.onActivation = true;
     };
 
-
   };
 
   xdg = {
@@ -97,9 +92,7 @@
   # Bootloader.
   boot = {
     loader = {
-      systemd-boot = {
-        enable = true;
-      };
+      systemd-boot = { enable = true; };
       efi.canTouchEfiVariables = true;
     };
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback.out ];
@@ -140,7 +133,7 @@
   };
 
   security = {
-    pam.services.swaylock = {
+    pam.services.hyprlock = {
       text = ''
         auth include login
       '';
