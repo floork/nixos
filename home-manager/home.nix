@@ -94,6 +94,7 @@ in {
     chromium
     element-desktop
     gimp
+    gromit-mpx
     gnome.gnome-disk-utility
     localsend
     libsForQt5.kruler
