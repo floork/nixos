@@ -96,6 +96,7 @@ in {
     gimp
     gromit-mpx
     gnome.gnome-disk-utility
+    kitty
     localsend
     libsForQt5.kruler
     networkmanagerapplet
@@ -138,6 +139,8 @@ in {
     python3
     python311Packages.pip
     ## rust
+    libiconv
+    rustc
     rustup
     ## sql
     beekeeper-studio
