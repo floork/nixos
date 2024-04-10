@@ -23,10 +23,10 @@
       "audio"
       "pulse"
       "docker"
+      "plugdev"
       ''
         libvirtd
       ''
-      "plugdev"
     ];
     home = "/home/floork";
   };
@@ -55,6 +55,8 @@
     # Wine
     wineWow64Packages.full
 
+    # keyboard
+    wally-cli
 
     wezterm
   ];

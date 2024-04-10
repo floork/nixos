@@ -130,6 +130,8 @@
       enable = true;
       package = pkgs.bluez;
     };
+
+    keyboard = { zsa = { enable = true; }; };
   };
 
   security = {
