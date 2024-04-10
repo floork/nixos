@@ -162,6 +162,7 @@ in {
     lazygit
     luajitPackages.lua-lsp
     luajitPackages.luarocks-nix
+    marksman
     nodePackages.eslint
     nodePackages.prettier
     pandoc
