@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -33,8 +38,7 @@
 
   users.extraGroups.vboxusers.members = [ "flmr799e" ];
 
-  users.users.flmr799e.packages = with pkgs; [
-  ];
+  users.users.flmr799e.packages = with pkgs; [ ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

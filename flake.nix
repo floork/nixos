@@ -3,7 +3,10 @@
 
   nixConfig = {
     # manage flakes 
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   inputs = {
@@ -39,20 +42,32 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, hyprland, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nix-flatpak,
+      hyprland,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+        };
       };
       lib = nixpkgs.lib;
-
-    in {
+    in
+    {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs system; };
+          specialArgs = {
+            inherit inputs system;
+          };
           modules = [
             ./system/desktop.nix
             hyprland.nixosModules.default
@@ -62,14 +77,18 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.floork = import ./home-manager/personal.nix;
-              home-manager.extraSpecialArgs = { inherit inputs system; };
+              home-manager.extraSpecialArgs = {
+                inherit inputs system;
+              };
             }
             nix-flatpak.nixosModules.nix-flatpak
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs system; };
+          specialArgs = {
+            inherit inputs system;
+          };
           modules = [
             ./system/laptop.nix
             hyprland.nixosModules.default
@@ -79,14 +98,18 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.floork = import ./home-manager/personal.nix;
-              home-manager.extraSpecialArgs = { inherit inputs system; };
+              home-manager.extraSpecialArgs = {
+                inherit inputs system;
+              };
             }
             nix-flatpak.nixosModules.nix-flatpak
           ];
         };
         work = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs system; };
+          specialArgs = {
+            inherit inputs system;
+          };
           modules = [
             ./system/work.nix
             hyprland.nixosModules.default
@@ -96,7 +119,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.flmr799e = import ./home-manager/work.nix;
-              home-manager.extraSpecialArgs = { inherit inputs system; };
+              home-manager.extraSpecialArgs = {
+                inherit inputs system;
+              };
             }
             nix-flatpak.nixosModules.nix-flatpak
           ];

@@ -1,8 +1,12 @@
-{ inputs, system, config, pkgs, ... }:
 {
-  imports = [
-    ./home.nix
-  ];
+  inputs,
+  system,
+  config,
+  pkgs,
+  ...
+}:
+{
+  imports = [ ./home.nix ];
 
   # Info about user and path it manages
   home.username = "floork";

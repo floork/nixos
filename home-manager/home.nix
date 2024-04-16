@@ -1,11 +1,18 @@
-{ inputs, system, config, pkgs, ... }:
+{
+  inputs,
+  system,
+  config,
+  pkgs,
+  ...
+}:
 let
   # Wezterm as flake
   wezterm-custom = inputs.wezterm.packages."${system}".default;
 
   # Grimblast
   grimblast-custom = inputs.hyprland-contrib.packages.${pkgs.system}.grimblast;
-in {
+in
+{
   imports = [ inputs.hyprland.homeManagerModules.default ];
 
   # Let Home Manager install and manage itself.
@@ -75,7 +82,7 @@ in {
     libnotify
     libsForQt5.okular
     libsForQt5.qt5ct
-    nixfmt
+    nixfmt-rfc-style
     nwg-look
     openssl
     openssl.dev
@@ -192,10 +199,11 @@ in {
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri-dark =
-        "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+      picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
     };
-    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 
   gtk = {

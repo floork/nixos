@@ -1,9 +1,16 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   # ENV 
   environment = {
-    variables = { EDITOR = "nvim"; };
+    variables = {
+      EDITOR = "nvim";
+    };
     sessionVariables = rec {
       # Hint Electron apps to use wayland
       NIXOS_OZONE_WL = "1";
@@ -25,7 +32,9 @@
 
     xserver = {
       enable = true;
-      xkb = { layout = "us"; };
+      xkb = {
+        layout = "us";
+      };
       displayManager.gdm = {
         enable = true;
         wayland = true;
@@ -75,7 +84,6 @@
       ];
       update.onActivation = true;
     };
-
   };
 
   xdg = {
@@ -92,7 +100,9 @@
   # Bootloader.
   boot = {
     loader = {
-      systemd-boot = { enable = true; };
+      systemd-boot = {
+        enable = true;
+      };
       efi.canTouchEfiVariables = true;
     };
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback.out ];
@@ -131,7 +141,11 @@
       package = pkgs.bluez;
     };
 
-    keyboard = { zsa = { enable = true; }; };
+    keyboard = {
+      zsa = {
+        enable = true;
+      };
+    };
   };
 
   security = {
@@ -169,7 +183,9 @@
       };
     };
 
-    virtualbox = { host.enable = true; };
+    virtualbox = {
+      host.enable = true;
+    };
   };
 
   # Add additional man pages 
@@ -200,5 +216,8 @@
   };
 
   # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }

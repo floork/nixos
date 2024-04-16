@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   programs = {
@@ -7,7 +12,9 @@
       defaultEditor = true;
     };
     nix-ld.enable = true;
-    zsh = { enable = true; };
+    zsh = {
+      enable = true;
+    };
   };
 
   # Allow unfree packages
