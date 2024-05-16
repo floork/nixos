@@ -43,6 +43,7 @@ in
     xwaylandvideobridge
 
     # Terminal Utilities
+    bat
     brightnessctl
     curl
     dig
