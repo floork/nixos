@@ -23,7 +23,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.1.0";
 
     # Hyprland window manager 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # Community scripts and utilities for Hypr projects
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
