@@ -29,6 +29,7 @@ in
     dunst
     grim
     grimblast-custom
+    hyprcursor
     hyprland-protocols
     hyprlock
     slurp
