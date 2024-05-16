@@ -52,8 +52,6 @@
 
     logind.extraConfig = "HandleLidSwitch=hibernate";
 
-    fprintd.enable = true;
-
     gnome.gnome-keyring.enable = true;
 
     devmon.enable = true;

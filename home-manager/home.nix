@@ -71,7 +71,6 @@ in
     docker
     emote
     feh
-    fprintd
     fuse
     gcc
     git
