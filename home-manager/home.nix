@@ -43,7 +43,6 @@ in
     xwaylandvideobridge
 
     # Terminal Utilities
-    bat
     brightnessctl
     curl
     dig
@@ -114,7 +113,6 @@ in
     texmaker
     # thunderbird # now using betterbird
     tmux
-    virt-manager
     warp-terminal
     wezterm-custom
     xfce.thunar

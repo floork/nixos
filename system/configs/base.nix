@@ -171,21 +171,6 @@
     style = "adwaita-dark";
   };
 
-  # Enable Docker
-  virtualisation = {
-    docker = {
-      enable = true;
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
-    };
-
-    virtualbox = {
-      host.enable = true;
-    };
-  };
-
   # Add additional man pages 
   documentation.dev.enable = true;
 
