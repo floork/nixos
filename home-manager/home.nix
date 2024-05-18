@@ -32,6 +32,7 @@ in
     hyprcursor
     hyprland-protocols
     hyprlock
+    hyprpaper
     slurp
     swaybg
     waybar
