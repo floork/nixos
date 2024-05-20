@@ -120,7 +120,6 @@ in
     yubikey-manager-qt
 
     # Gaming
-    minecraft
     prismlauncher
 
     # Development
