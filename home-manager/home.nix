@@ -112,13 +112,16 @@ in
     obsidian
     spotify
     texmaker
-    # thunderbird # now using betterbird
     tmux
     warp-terminal
     wezterm-custom
     xfce.thunar
     xfce.tumbler
     yubikey-manager-qt
+
+    # Gaming
+    minecraft
+    prismlauncher
 
     # Development
     ## c/c++
