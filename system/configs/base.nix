@@ -149,12 +149,16 @@
   };
 
   security = {
-    pam.services.hyprlock = {
-      text = ''
-        auth include login
-      '';
+    pam = {
+      services = {
+        hyprlock = {
+          text = ''
+            auth include login
+          '';
+        };
+        login.enableGnomeKeyring = true;
+      };
     };
-    pam.services.login.enableGnomeKeyring = true;
     rtkit.enable = true;
   };
 
