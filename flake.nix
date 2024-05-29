@@ -35,6 +35,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    pyprland.url = "github:hyprland-community/pyprland";
+
     # WezTerm package
     wezterm = {
       url = "github:wez/wezterm?dir=nix";

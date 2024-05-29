@@ -11,6 +11,9 @@ let
 
   # Grimblast
   grimblast-custom = inputs.hyprland-contrib.packages.${pkgs.system}.grimblast;
+
+  # Pyprland
+  pyprland = inputs.pyprland.packages.${system}.pyprland;
 in
 {
   imports = [ inputs.hyprland.homeManagerModules.default ];
@@ -33,6 +36,7 @@ in
     hyprland-protocols
     hyprlock
     hyprpaper
+    pyprland
     slurp
     swaybg
     waybar
@@ -151,6 +155,8 @@ in
     libiconv
     rustc
     rustup
+    binutils
+    openssl
     ## sql
     beekeeper-studio
     mysql-workbench
