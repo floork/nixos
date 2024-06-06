@@ -130,6 +130,7 @@ in
     ## c/c++
     cmake
     neocmakelsp
+    ninja
     meson
     ## go
     go
