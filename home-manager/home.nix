@@ -101,6 +101,7 @@ in
     zip
 
     # Desktop Applications
+    alacritty
     betterbird
     brave
     chromium
@@ -108,7 +109,6 @@ in
     gimp
     gromit-mpx
     gnome.gnome-disk-utility
-    kitty
     localsend
     libsForQt5.kruler
     networkmanagerapplet
