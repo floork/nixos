@@ -118,7 +118,6 @@ in
     spotify
     texmaker
     tmux
-    warp-terminal
     # wezterm-custom
     xfce.thunar
     xfce.tumbler
