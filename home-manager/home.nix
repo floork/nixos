@@ -7,7 +7,7 @@
 }:
 let
   # Wezterm as flake
-  wezterm-custom = inputs.wezterm.packages."${system}".default;
+  # wezterm-custom = inputs.wezterm.packages."${system}".default;
 
   # Grimblast
   grimblast-custom = inputs.hyprland-contrib.packages.${pkgs.system}.grimblast;
@@ -109,7 +109,7 @@ in
     element-desktop
     gimp
     gromit-mpx
-    gnome.gnome-disk-utility
+    gnome-disk-utility
     localsend
     libsForQt5.kruler
     networkmanagerapplet
@@ -119,7 +119,7 @@ in
     texmaker
     tmux
     warp-terminal
-    wezterm-custom
+    # wezterm-custom
     xfce.thunar
     xfce.tumbler
     yubikey-manager-qt
@@ -220,7 +220,7 @@ in
     enable = true;
     theme = {
       name = "Adwaita-dark";
-      package = pkgs.gnome.gnome-themes-extra;
+      package = pkgs.gnome-themes-extra;
     };
   };
 

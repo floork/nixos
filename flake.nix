@@ -38,10 +38,10 @@
     pyprland.url = "github:hyprland-community/pyprland";
 
     # WezTerm package
-    wezterm = {
-      url = "github:wez/wezterm?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # wezterm = {
+    #   url = "github:wez/wezterm?dir=nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
@@ -62,6 +62,8 @@
         };
       };
       lib = nixpkgs.lib;
+
+      nixVer = "23.11";
     in
     {
       nixosConfigurations = {
@@ -84,6 +86,7 @@
               };
             }
             nix-flatpak.nixosModules.nix-flatpak
+            { system.stateVersion = nixVer; }
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -105,6 +108,7 @@
               };
             }
             nix-flatpak.nixosModules.nix-flatpak
+            { system.stateVersion = nixVer; }
           ];
         };
         work = nixpkgs.lib.nixosSystem {
@@ -126,6 +130,7 @@
               };
             }
             nix-flatpak.nixosModules.nix-flatpak
+            { system.stateVersion = nixVer; }
           ];
         };
       };
