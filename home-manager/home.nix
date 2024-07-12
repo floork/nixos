@@ -74,7 +74,6 @@ in
     bluez
     bluez-tools
     blueman
-    docker
     emote
     feh
     fuse

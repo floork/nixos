@@ -99,14 +99,6 @@
 
   virtualisation.docker = {
     enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-    extraOptions = ''
-      --dns 9.9.9.9
-      --dns 1.1.1.1
-    '';
   };
 
   # Bootloader.
