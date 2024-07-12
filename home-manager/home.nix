@@ -159,7 +159,7 @@ in
     openssl
     ## sql
     beekeeper-studio
-    mysql-workbench
+    # mysql-workbench
     ## zig
     zig
     ## tools
