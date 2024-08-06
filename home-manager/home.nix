@@ -87,6 +87,7 @@ in
     libnotify
     libsForQt5.okular
     libsForQt5.qt5ct
+    nextcloud-client
     nixfmt-rfc-style
     nwg-look
     openssl
