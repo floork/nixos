@@ -81,6 +81,7 @@
         "com.obsproject.Studio.Plugin.BackgroundRemoval"
         "org.gnome.Fractal"
         "org.libreoffice.LibreOffice"
+        "io.qt.Designer"
       ];
       update.onActivation = true;
     };
