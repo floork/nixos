@@ -115,6 +115,7 @@ in
     networkmanagerapplet
     obs-studio
     obsidian
+    protonmail-bridge-gui
     spotify
     texmaker
     tmux
