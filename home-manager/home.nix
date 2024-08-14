@@ -119,6 +119,7 @@ in
     spotify
     texmaker
     tmux
+    tor-browser
     # wezterm-custom
     xfce.thunar
     xfce.tumbler
