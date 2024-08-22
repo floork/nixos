@@ -30,6 +30,7 @@ in
   home.packages = with pkgs; [
     # hyprland stuff
     dunst
+    fuzzel
     grim
     grimblast-custom
     hyprcursor
