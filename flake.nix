@@ -34,6 +34,11 @@
       url = "github:hyprwm/hyprlock";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # hypridle
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     pyprland.url = "github:hyprland-community/pyprland";
 

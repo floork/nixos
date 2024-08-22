@@ -33,6 +33,7 @@ in
     grim
     grimblast-custom
     hyprcursor
+    hypridle
     hyprland-protocols
     hyprlock
     hyprpaper
