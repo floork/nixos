@@ -99,7 +99,7 @@ in
     playerctl
     sqlite
     translate-shell
-    trash-cli
+    trashy
     xorg.xkill
     zip
 
