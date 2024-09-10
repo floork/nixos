@@ -108,7 +108,7 @@ in
 
     # Desktop Applications
     alacritty
-    betterbird
+    # betterbird
     brave
     chromium
     element-desktop
