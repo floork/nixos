@@ -14,6 +14,8 @@ let
 
   # Pyprland
   pyprland = inputs.pyprland.packages.${system}.pyprland;
+
+  zen-browser-custom = inputs.zen-browser.packages.${system}.zen-browser;
 in
 {
   imports = [ inputs.hyprland.homeManagerModules.default ];
@@ -28,6 +30,7 @@ in
 
   # User packages
   home.packages = with pkgs; [
+    zen-browser-custom
     # hyprland stuff
     dunst
     fuzzel

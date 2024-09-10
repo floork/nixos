@@ -39,6 +39,10 @@
       url = "github:hyprwm/hypridle";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:heywoodlh/flakes/main?dir=zen-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     pyprland.url = "github:hyprland-community/pyprland";
 
