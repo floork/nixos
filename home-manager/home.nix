@@ -15,7 +15,7 @@ let
   # Pyprland
   pyprland = inputs.pyprland.packages.${system}.pyprland;
 
-  zen-browser-custom = inputs.zen-browser.packages.${system}.zen-browser;
+  zen-browser-custom = inputs.zen-browser.packages."${system}".default;
 in
 {
   imports = [ inputs.hyprland.homeManagerModules.default ];
