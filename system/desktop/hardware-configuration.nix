@@ -39,8 +39,6 @@
     fsType = "ext4";
   };
 
-  swapDevices = [ ];
-  boot.initrd.swapDevices = [ { device = "/dev/zram0"; } ];
   services.zramSwap = {
     enable = true;
     compression = "zstd";
