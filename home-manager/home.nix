@@ -7,7 +7,7 @@
 }:
 let
   # Wezterm as flake
-  # wezterm-custom = inputs.wezterm.packages."${system}".default;
+  wezterm-custom = inputs.wezterm.packages."${system}".default;
 
   # Grimblast
   grimblast-custom = inputs.hyprland-contrib.packages.${pkgs.system}.grimblast;
@@ -124,7 +124,7 @@ in
     texmaker
     tmux
     tor-browser
-    # wezterm-custom
+    wezterm-custom
     xfce.thunar
     xfce.tumbler
     yubikey-manager-qt
