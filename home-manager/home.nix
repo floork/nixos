@@ -107,7 +107,6 @@ in
 
     # Desktop Applications
     alacritty
-    # betterbird
     brave
     chromium
     element-desktop
@@ -122,6 +121,7 @@ in
     protonmail-bridge-gui
     spotify
     texmaker
+    thunderbird
     tmux
     tor-browser
     wezterm-custom
