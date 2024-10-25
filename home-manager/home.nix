@@ -55,8 +55,11 @@ in
     # Terminal Utilities
     bat
     brightnessctl
+    cowsay
     curl
     dig
+    fortune
+    lolcat
     lsd
     tree
     gh
