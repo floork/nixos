@@ -105,6 +105,7 @@ in
     playerctl
     sqlite
     translate-shell
+    trashy
     xorg.xkill
     zip
 
