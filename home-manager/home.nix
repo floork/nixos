@@ -63,7 +63,7 @@ in
     lsd
     tree
     gh
-    htop
+    htop-vim
     neofetch
     pkg-config
     tldr
