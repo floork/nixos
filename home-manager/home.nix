@@ -67,6 +67,7 @@ in
     neofetch
     pkg-config
     tldr
+    unrar
     util-linux
     vim
     wget
@@ -132,6 +133,7 @@ in
     xfce.thunar
     xfce.tumbler
     yubikey-manager-qt
+    zellij
 
     # Gaming
     prismlauncher
