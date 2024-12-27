@@ -16,6 +16,8 @@ let
   pyprland = inputs.pyprland.packages.${system}.pyprland;
 
   zen-browser-custom = inputs.zen-browser.packages."${system}".default;
+
+  ghostty-custom = inputs.ghostty.packages."${system}".default;
 in
 {
   imports = [ inputs.hyprland.homeManagerModules.default ];
@@ -30,6 +32,7 @@ in
 
   # User packages
   home.packages = with pkgs; [
+    ghostty-custom
     zen-browser-custom
     # hyprland stuff
     dunst
