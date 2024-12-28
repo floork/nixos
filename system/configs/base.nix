@@ -30,15 +30,8 @@
 
     dbus.enable = true;
 
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-      };
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
+    displayManager = {
+      ly.enable = true;
     };
 
     pipewire = {
