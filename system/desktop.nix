@@ -42,7 +42,6 @@
     lutris
     piper
     prismlauncher
-    protonmail-bridge
     qbittorrent
 
     # Development
