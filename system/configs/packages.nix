@@ -25,9 +25,10 @@
   ];
 
   # Fonts
-  fonts.packages = with pkgs; [
-    # Nerd fonts
-    nerdfonts
-    meslo-lgs-nf
-  ];
+  fonts.packages =
+    with pkgs;
+    [
+      # Include all Nerd fonts
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }
