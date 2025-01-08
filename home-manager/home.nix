@@ -27,7 +27,7 @@ in
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    XDG_CURRENT_DESKTOP = "Sway";
+    XDG_CURRENT_DESKTOP = "hyprland";
   };
 
   # User packages
