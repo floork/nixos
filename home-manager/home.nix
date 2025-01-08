@@ -117,6 +117,7 @@ in
     alacritty
     brave
     chromium
+    discord
     element-desktop
     gimp
     gromit-mpx
