@@ -35,8 +35,12 @@
   };
 
   fileSystems."/home/floork/2nd_drive" = {
-    device = "/dev/nvme1n1p1";
+    device = "/dev/disk/by-uuid/997c8259-a9bd-451b-aaf1-7ba19d1c0884";
     fsType = "ext4";
+    options = [
+      "nofail"
+      "x-systemd.device-timeout=60s"
+    ];
   };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
