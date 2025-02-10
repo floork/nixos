@@ -25,24 +25,21 @@
           from = 8000;
           to = 8010;
         }
+        # Open mDNS (UDP 5353) and SLP (UDP 427) ports
+        {
+          from = 5353;
+          to = 5353;
+        }
+        {
+          from = 427;
+          to = 427;
+        }
       ];
     };
     nameservers = [
+      "10.42.0.11"
       "1.1.1.1#one.one.one.one"
       "1.0.0.1#one.one.one.one"
     ];
-  };
-
-  services.resolved = {
-    enable = true;
-    dnssec = "true";
-    domains = [ "~." ];
-    fallbackDns = [
-      "1.1.1.1#one.one.one.one"
-      "1.0.0.1#one.one.one.one"
-    ];
-    extraConfig = ''
-      DNSOverTLS=yes
-    '';
   };
 }
