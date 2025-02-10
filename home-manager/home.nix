@@ -81,8 +81,6 @@ in
 
     # System Utilities
     alsa-utils
-    bitwarden
-    bitwarden-cli
     bluez
     bluez-tools
     blueman
@@ -194,7 +192,6 @@ in
     luajitPackages.lua-lsp
     luajitPackages.luarocks-nix
     marksman
-    nodePackages.eslint
     nodePackages.prettier
     pandoc
     python311Packages.pip
