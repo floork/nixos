@@ -2,7 +2,7 @@
   description = "My humble Nix config!";
 
   nixConfig = {
-    # manage flakes 
+    # manage flakes
     experimental-features = [
       "nix-command"
       "flakes"
@@ -25,7 +25,7 @@
     # Nix Flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.1.0";
 
-    # Hyprland window manager 
+    # Hyprland window manager
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # Community scripts and utilities for Hypr projects
     hyprland-contrib = {
@@ -96,6 +96,11 @@
             }
             nix-flatpak.nixosModules.nix-flatpak
             { system.stateVersion = nixVer; }
+            {
+              nix.settings = {
+                cores = 5;
+              };
+            }
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
