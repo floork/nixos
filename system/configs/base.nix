@@ -6,7 +6,7 @@
 }:
 
 {
-  # ENV 
+  # ENV
   environment = {
     variables = {
       EDITOR = "nvim";
@@ -166,7 +166,6 @@
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     };
-    waybar.enable = true;
   };
 
   qt = {
@@ -175,7 +174,7 @@
     style = "adwaita-dark";
   };
 
-  # Add additional man pages 
+  # Add additional man pages
   documentation.dev.enable = true;
 
   system.activationScripts = {
