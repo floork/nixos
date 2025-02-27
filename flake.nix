@@ -25,8 +25,6 @@
     # Nix Flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.1.0";
 
-    # Hyprland window manager
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # Community scripts and utilities for Hypr projects
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
@@ -59,7 +57,7 @@
       nixpkgs,
       home-manager,
       nix-flatpak,
-      hyprland,
+      # hyprland,
       ...
     }@inputs:
     let
@@ -83,7 +81,6 @@
           };
           modules = [
             ./system/desktop.nix
-            hyprland.nixosModules.default
             { programs.hyprland.enable = true; }
             home-manager.nixosModules.home-manager
             {
@@ -110,7 +107,6 @@
           };
           modules = [
             ./system/laptop.nix
-            hyprland.nixosModules.default
             { programs.hyprland.enable = true; }
             home-manager.nixosModules.home-manager
             {
@@ -132,7 +128,6 @@
           };
           modules = [
             ./system/work.nix
-            hyprland.nixosModules.default
             { programs.hyprland.enable = true; }
             home-manager.nixosModules.home-manager
             {

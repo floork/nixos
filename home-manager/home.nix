@@ -20,8 +20,6 @@ let
   ghostty-custom = inputs.ghostty.packages."${system}".default;
 in
 {
-  imports = [ inputs.hyprland.homeManagerModules.default ];
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
