@@ -93,11 +93,6 @@
             }
             nix-flatpak.nixosModules.nix-flatpak
             { system.stateVersion = nixVer; }
-            {
-              nix.settings = {
-                cores = 5;
-              };
-            }
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
