@@ -72,7 +72,6 @@
         "com.mojang.Minecraft"
         "com.obsproject.Studio"
         "com.obsproject.Studio.Plugin.BackgroundRemoval"
-        "org.gnome.Fractal"
         "org.libreoffice.LibreOffice"
         "io.qt.Designer"
       ];

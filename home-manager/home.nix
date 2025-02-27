@@ -53,7 +53,7 @@ in
     wofi
     wttrbar
     xdg-desktop-portal-hyprland
-    xwaylandvideobridge
+    kdePackages.xwaylandvideobridge
 
     # Terminal Utilities
     bat
@@ -108,6 +108,7 @@ in
     sqlite
     translate-shell
     trashy
+    usbutils
     xorg.xkill
     zip
 
