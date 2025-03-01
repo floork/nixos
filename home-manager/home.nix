@@ -88,6 +88,7 @@ in
     graphviz
     gparted
     inxi
+    jack2
     killall
     libiconv
     libnotify
@@ -101,6 +102,7 @@ in
     p7zip
     pavucontrol
     playerctl
+    qjackctl
     sqlite
     translate-shell
     trashy
