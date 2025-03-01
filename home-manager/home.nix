@@ -17,7 +17,6 @@ let
 
   zen-browser-custom = inputs.zen-browser.packages."${system}".default;
 
-  ghostty-custom = inputs.ghostty.packages."${system}".default;
 in
 {
   # Let Home Manager install and manage itself.
@@ -30,7 +29,6 @@ in
 
   # User packages
   home.packages = with pkgs; [
-    ghostty-custom
     zen-browser-custom
     # hyprland stuff
     dunst
@@ -116,6 +114,7 @@ in
     chromium
     discord
     element-desktop
+    ghostty
     gimp
     gromit-mpx
     gnome-disk-utility
