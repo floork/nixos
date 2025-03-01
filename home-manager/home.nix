@@ -242,7 +242,7 @@ in
       name = "Adwaita";
     };
     font = {
-      name = "Sans";
+      name = "FiraCode Nerd Font";
       size = 11;
     };
   };
