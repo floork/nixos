@@ -111,6 +111,11 @@
             }
             nix-flatpak.nixosModules.nix-flatpak
             { system.stateVersion = nixVer; }
+            {
+              nix.settings = {
+                cores = 3;
+              };
+            }
           ];
         };
         work = nixpkgs.lib.nixosSystem {
