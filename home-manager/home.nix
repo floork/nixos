@@ -43,6 +43,7 @@ in
     pyprland
     slurp
     swaybg
+    walker
     waybar
     waypaper
     wl-clipboard
