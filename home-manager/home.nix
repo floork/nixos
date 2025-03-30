@@ -134,7 +134,6 @@ in
     # wezterm-custom
     xfce.thunar
     xfce.tumbler
-    yubikey-manager-qt
     zellij
 
     # Gaming
@@ -212,7 +211,6 @@ in
     # Miscellaneous
     clipman
     gnupg
-    peek
     pinentry
     starship
   ];
