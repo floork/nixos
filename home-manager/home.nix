@@ -172,7 +172,7 @@ in
     binutils
     openssl
     ## sql
-    beekeeper-studio
+    # beekeeper-studio # marked as unsecure
     # mysql-workbench
     ## zig
     zig
