@@ -142,7 +142,6 @@ in
     # Development
     ## c/c++
     cmake
-    neocmakelsp
     ninja
     meson
     ## go
@@ -178,27 +177,22 @@ in
     zig
     ## tools
     ansible
-    hugo
-    neovim
-    vscode
-
-    # NeoVim
-    deno
     fd
     fzf
-    gnumake
-    grip
+    hugo
     lazygit
-    luajitPackages.lua-lsp
-    luajitPackages.luarocks-nix
-    marksman
-    nodePackages.prettier
-    pandoc
-    python311Packages.pip
-    ripgrep # needed for telescope-fzf
-    shfmt
+    vscode
     unzip
-    vimPlugins.telescope-fzf-native-nvim
+
+    # NeoVim
+    neovim
+    clang-tools
+    luajitPackages.lua-lsp
+    neocmakelsp
+    nodePackages.bash-language-server
+    pyright
+    texlab
+    vscode-langservers-extracted
 
     # Hardware Info
     cpu-x
