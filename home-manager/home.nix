@@ -186,6 +186,7 @@ in
 
     # NeoVim
     neovim
+    ripgrep
     clang-tools
     luajitPackages.lua-lsp
     neocmakelsp
