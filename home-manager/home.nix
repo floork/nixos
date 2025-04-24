@@ -115,12 +115,12 @@ in
     alacritty
     brave
     chromium
-    discord
     element-desktop
     ghostty
     gimp
     gromit-mpx
     gnome-disk-utility
+    legcord
     localsend
     libsForQt5.kruler
     networkmanagerapplet
