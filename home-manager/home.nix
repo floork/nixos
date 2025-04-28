@@ -105,6 +105,7 @@ in
     playerctl
     qjackctl
     sqlite
+    texliveFull
     translate-shell
     trashy
     usbutils
@@ -142,6 +143,7 @@ in
     # Development
     ## c/c++
     cmake
+    gnumake
     ninja
     meson
     ## go
@@ -198,7 +200,7 @@ in
     # Hardware Info
     cpu-x
     dmidecode
-    hardinfo
+    hardinfo2
     hwinfo
     lshw
     ntfs3g

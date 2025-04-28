@@ -61,6 +61,10 @@
     printing.enable = true;
     ratbagd.enable = true;
 
+    avahi.enable = true;
+    avahi.nssmdns = true; # Or nssmdns4 = true; [11]
+    avahi.openFirewall = true; # Opens necessary ports in the NixOS firewall [1, 11]
+
     flatpak = {
       enable = true;
       # remotes = [{
@@ -142,6 +146,12 @@
       zsa = {
         enable = true;
       };
+    };
+
+    sane = {
+      enable = true;
+      extraBackends = [ pkgs.hplipWithPlugin ];
+      disabledDefaultBackends = [ "escl" ];
     };
   };
 

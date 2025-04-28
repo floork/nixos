@@ -28,6 +28,8 @@
       ''
         libvirtd
       ''
+      "scanner"
+      "lp"
     ];
     home = "/home/floork";
   };
@@ -59,6 +61,7 @@
     wally-cli
 
     # wezterm
+    simple-scan
   ];
 
   programs.steam = {
