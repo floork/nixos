@@ -127,6 +127,7 @@ in
     networkmanagerapplet
     obs-studio
     obsidian
+    rquickshare
     spotify
     texmaker
     thunderbird
