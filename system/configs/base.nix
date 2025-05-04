@@ -5,6 +5,9 @@
   ...
 }:
 
+let
+  clam = pkgs.clamav;
+in
 {
   # ENV
   environment = {
@@ -25,6 +28,19 @@
 
   # List services that you want to enable:
   services = {
+    clamav = {
+      daemon.enable = true;
+      updater.enable = true;
+      scanner = {
+        enable = true;
+        interval = "hourly";
+      };
+      fangfrisch = {
+        enable = true;
+        interval = "hourly";
+      };
+    };
+
     # OpenSSH daemon
     openssh.enable = true;
 
@@ -62,7 +78,7 @@
     ratbagd.enable = true;
 
     avahi.enable = true;
-    avahi.nssmdns = true; # Or nssmdns4 = true; [11]
+    avahi.nssmdns4 = true;
     avahi.openFirewall = true; # Opens necessary ports in the NixOS firewall [1, 11]
 
     flatpak = {
@@ -167,6 +183,9 @@
       };
     };
     rtkit.enable = true;
+    apparmor = {
+      enable = true;
+    };
   };
 
   # Window manager
