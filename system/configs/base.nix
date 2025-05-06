@@ -80,23 +80,6 @@ in
     avahi.enable = true;
     avahi.nssmdns4 = true;
     avahi.openFirewall = true; # Opens necessary ports in the NixOS firewall [1, 11]
-
-    flatpak = {
-      enable = true;
-      # remotes = [{
-      #   name = "flathub-beta";
-      #   location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
-      # }]; # Uncomment to enable flathub-beta
-      packages = [
-        "com.discordapp.Discord"
-        "com.mojang.Minecraft"
-        "com.obsproject.Studio"
-        "com.obsproject.Studio.Plugin.BackgroundRemoval"
-        "org.libreoffice.LibreOffice"
-        "io.qt.Designer"
-      ];
-      update.onActivation = true;
-    };
   };
 
   xdg = {

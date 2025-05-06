@@ -19,9 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Nix Flatpak
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.1.0";
-
     # Community scripts and utilities for Hypr projects
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
@@ -53,7 +50,6 @@
       self,
       nixpkgs,
       home-manager,
-      nix-flatpak,
       # hyprland,
       ...
     }@inputs:
@@ -88,7 +84,6 @@
                 inherit inputs system;
               };
             }
-            nix-flatpak.nixosModules.nix-flatpak
             { system.stateVersion = nixVer; }
           ];
         };
@@ -109,7 +104,6 @@
                 inherit inputs system;
               };
             }
-            nix-flatpak.nixosModules.nix-flatpak
             { system.stateVersion = nixVer; }
             {
               nix.settings = {
@@ -135,7 +129,6 @@
                 inherit inputs system;
               };
             }
-            nix-flatpak.nixosModules.nix-flatpak
             { system.stateVersion = nixVer; }
           ];
         };
