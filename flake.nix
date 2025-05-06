@@ -11,7 +11,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Home Manager
     home-manager = {
@@ -63,7 +63,7 @@
       };
       lib = nixpkgs.lib;
 
-      nixVer = "23.11";
+      nixVer = "24.11";
     in
     {
       nixosConfigurations = {
