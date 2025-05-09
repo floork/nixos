@@ -5,9 +5,6 @@
   ...
 }:
 
-let
-  clam = pkgs.clamav;
-in
 {
   # ENV
   environment = {
@@ -28,18 +25,18 @@ in
 
   # List services that you want to enable:
   services = {
-    clamav = {
-      daemon.enable = true;
-      updater.enable = true;
-      scanner = {
-        enable = true;
-        interval = "hourly";
-      };
-      fangfrisch = {
-        enable = true;
-        interval = "hourly";
-      };
-    };
+    # clamav = {
+    #   daemon.enable = true;
+    #   updater.enable = true;
+    #   scanner = {
+    #     enable = true;
+    #     interval = "hourly";
+    #   };
+    #   fangfrisch = {
+    #     enable = true;
+    #     interval = "hourly";
+    #   };
+    # };
 
     # OpenSSH daemon
     openssh.enable = true;
