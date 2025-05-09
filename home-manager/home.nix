@@ -159,6 +159,7 @@ in
     ## lua
     lua
     lua-language-server
+    stylua
     ## nix
     nil
     ## python
