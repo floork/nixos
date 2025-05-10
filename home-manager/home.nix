@@ -156,6 +156,8 @@ in
     nodejs
     nodejs_20
     yarn
+    ## json
+    nodePackages.prettier
     ## lua
     lua
     lua-language-server
