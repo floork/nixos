@@ -35,35 +35,6 @@
   };
   users.extraGroups.vboxusers.members = [ "floork" ];
 
-  users.users.floork.packages = with pkgs; [
-    # System Utilities
-    solaar
-
-    # Desktop Applications
-    bottles
-    lutris
-    piper
-    prismlauncher
-    qbittorrent
-
-    # Development
-    ## gamedev
-    libratbag
-
-    # Miscellanious
-    openrgb
-    duplicati
-
-    # Wine
-    wineWow64Packages.full
-
-    # keyboard
-    wally-cli
-
-    # wezterm
-    simple-scan
-  ];
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play

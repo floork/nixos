@@ -64,6 +64,11 @@
       lib = nixpkgs.lib;
 
       nixVer = "24.11";
+
+      desktopSpecialArgs = {
+        inherit inputs system;
+        isDesktop = true;
+      };
     in
     {
       nixosConfigurations = {
@@ -71,6 +76,7 @@
           inherit system;
           specialArgs = {
             inherit inputs system;
+            isDesktop = true;
           };
           modules = [
             ./system/desktop.nix
@@ -80,9 +86,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.floork = import ./home-manager/personal.nix;
-              home-manager.extraSpecialArgs = {
-                inherit inputs system;
-              };
+              home-manager.extraSpecialArgs = desktopSpecialArgs;
             }
             { system.stateVersion = nixVer; }
           ];

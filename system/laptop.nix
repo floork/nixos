@@ -33,6 +33,4 @@
   };
 
   users.extraGroups.vboxusers.members = [ "floork" ];
-
-  users.users.floork.packages = with pkgs; [ acpi ];
 }
