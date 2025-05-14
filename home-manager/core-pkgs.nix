@@ -121,7 +121,8 @@ with pkgs;
   obs-studio
   obsidian
   rquickshare
-  spotify
+  # spotify
+  spot
   texmaker
   thunderbird
   tmux
