@@ -83,6 +83,7 @@ let
 
     # Python
     # pyright
+    # ty is currently installed via `uv tool install ty@latest`
     ruff
 
     # Tex
