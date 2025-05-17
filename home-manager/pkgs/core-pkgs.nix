@@ -201,7 +201,7 @@ with pkgs;
   ntfs3g
 
   # Miscellaneous
-  clipman
+  cliphist
   gnupg
   pinentry
   starship

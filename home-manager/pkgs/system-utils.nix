@@ -1,0 +1,39 @@
+{ pkgs, ... }:
+
+with pkgs;
+[
+  alsa-utils
+  bluez
+  bluez-tools
+  blueman
+  emote
+  feh
+  fuse
+  gcc
+  git
+  graphviz
+  gparted
+  inxi
+  jack2
+  killall
+  libiconv
+  libnotify
+  libsForQt5.okular
+  libsForQt5.qt5ct
+  nextcloud-client
+  nixfmt-rfc-style
+  nwg-look
+  openssl
+  openssl.dev
+  p7zip
+  pavucontrol
+  playerctl
+  qjackctl
+  sqlite
+  texliveFull
+  translate-shell
+  trashy
+  usbutils
+  xorg.xkill
+  zip
+]

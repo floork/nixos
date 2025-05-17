@@ -3,24 +3,19 @@
   system,
   config,
   pkgs,
-  isDesktop,
+  hostRole,
   ...
 }:
 let
-  corePackages = import ./core-pkgs.nix {
-    pkgs = pkgs;
-    inputs = inputs;
-    system = system;
+  packages = import ./pkgs/default.nix {
+    inherit
+      pkgs
+      inputs
+      system
+      hostRole
+      ;
   };
-  desktopPackages =
-    if isDesktop then
-      import ./desktop-pkgs.nix {
-        pkgs = pkgs;
-        inputs = inputs;
-        system = system;
-      }
-    else
-      [ ];
+
 in
 {
   # Let Home Manager install and manage itself.
@@ -32,11 +27,7 @@ in
   };
 
   # User packages
-  home.packages =
-    corePackages
-    ++ desktopPackages
-    ++ (with pkgs; [
-    ]);
+  home.packages = packages;
 
   fonts.fontconfig.enable = true;
 

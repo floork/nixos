@@ -1,0 +1,94 @@
+{ pkgs, ... }:
+
+with pkgs;
+
+let
+  tools = [
+    # C/C++
+    cmake
+    gnumake
+    ninja
+    meson
+
+    # JavaScript / TypeScript
+    yarn
+
+    # Misc tools
+    ansible
+    hugo
+    lazygit
+    vscode
+
+    # python
+    # poetry
+    # pyenv
+    # python311Packages.pip
+    rye
+    uv
+  ];
+
+  languages = [
+    # Go
+    go
+
+    # Java
+    openjdk
+
+    # JavaScript / TypeScript
+    nodejs
+    nodejs_20
+
+    # Lua
+    lua
+
+    # Python
+    python3
+
+    # Rust
+    rustc
+    rustup
+    binutils
+    openssl
+    libiconv
+
+    # Zig
+    zig
+  ];
+
+  neovimstuff = [
+    neovim
+    ripgrep
+  ];
+
+  lsp_formatting = [
+    # Bash
+    nodePackages.bash-language-server
+
+    # C/C++
+    clang-tools
+    neocmakelsp
+
+    # Go
+    gopls
+
+    # Lua
+    luajitPackages.lua-lsp
+    stylua
+
+    # Misc
+    vscode-langservers-extracted
+
+    # Nix
+    nil
+
+    # Python
+    # pyright
+    ruff
+
+    # Tex
+    texlab
+  ];
+in
+
+# Final merged list
+tools ++ languages ++ neovimstuff ++ lsp_formatting
