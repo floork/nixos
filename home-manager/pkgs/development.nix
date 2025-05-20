@@ -45,7 +45,6 @@ let
     python3
 
     # Rust
-    rustc
     rustup
     binutils
     openssl

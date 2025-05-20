@@ -30,6 +30,7 @@
       ''
       "scanner"
       "lp"
+      "dialout"
     ];
     home = "/home/floork";
   };
