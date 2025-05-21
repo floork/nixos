@@ -28,6 +28,9 @@ let
   ];
 
   languages = [
+    # embedded
+    picocom
+
     # Go
     go
 
