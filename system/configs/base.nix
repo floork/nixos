@@ -18,6 +18,21 @@
         xdg-desktop-portal-gtk
       ];
       wlr.enable = true;
+      # Add this to specify which portal to use for what
+      config = {
+        common = {
+          default = [
+            "wlr"
+            "gtk"
+          ];
+        };
+        wlr = {
+          default = [
+            "wlr"
+            "gtk"
+          ];
+        };
+      };
     };
   };
 
@@ -96,14 +111,6 @@
     rtkit.enable = true;
     apparmor = {
       enable = true;
-    };
-  };
-
-  # Window manager
-  programs = {
-    hyprland = {
-      enable = true;
-      # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     };
   };
 

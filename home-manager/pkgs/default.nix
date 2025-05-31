@@ -17,9 +17,10 @@ let
   };
 
   hyprlandPkgs = import ./hyprland.nix { inherit pkgs custom; };
+  riverPkgs = import ./river.nix { inherit pkgs custom; };
   terminalPkgs = import ./terminal-utils.nix { inherit pkgs; };
   systemPkgs = import ./system-utils.nix { inherit pkgs; };
-  desktopPkgs = import ./desktop-apps.nix { inherit pkgs; };
+  desktopPkgs = import ./desktop-apps.nix { inherit pkgs custom; };
   gamingPkgs = import ./gaming.nix { inherit pkgs; };
   devPkgs = import ./development.nix { inherit pkgs; };
   hwPkgs = import ./hardware-info.nix { inherit pkgs; };
@@ -33,6 +34,7 @@ in
 
 lib.concatLists [
   hyprlandPkgs
+  riverPkgs
   terminalPkgs
   systemPkgs
   desktopPkgs

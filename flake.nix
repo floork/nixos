@@ -69,7 +69,10 @@
           };
           modules = [
             ./system/${systemFile}
-            { programs.hyprland.enable = true; }
+            {
+              programs.hyprland.enable = true;
+              programs.river.enable = true;
+            }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

@@ -1,7 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, custom, ... }:
 
 with pkgs;
 [
+  custom.zenBrowser
+
   alacritty
   brave
   chromium

@@ -23,8 +23,11 @@ in
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    XDG_CURRENT_DESKTOP = "hyprland";
+    XDG_CURRENT_DESKTOP = "wlroots";
+    XDG_SESSION_TYPE = "wayland";
   };
+
+  # programs.wayfire.enable = true;
 
   # User packages
   home.packages = packages;

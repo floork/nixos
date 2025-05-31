@@ -2,9 +2,6 @@
 
 with pkgs;
 [
-  home-manager
-  custom.zenBrowser
-
   # Hyprland ecosystem
   dunst
   fuzzel

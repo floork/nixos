@@ -7,6 +7,8 @@
   environment = {
     variables = {
       EDITOR = "nvim";
+      XDG_CURRENT_DESKTOP = "wlroots";
+      XDG_SESSION_TYPE = "wayland";
     };
     sessionVariables = rec {
       # Hint Electron apps to use wayland
