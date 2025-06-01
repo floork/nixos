@@ -27,8 +27,6 @@ in
     XDG_SESSION_TYPE = "wayland";
   };
 
-  # programs.wayfire.enable = true;
-
   # User packages
   home.packages = packages;
 

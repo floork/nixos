@@ -19,6 +19,10 @@
     shells = with pkgs; [ zsh ];
 
     pathsToLink = [ "/libexec" ];
-    systemPackages = with pkgs; [ coreutils ];
+    systemPackages = with pkgs; [
+      coreutils
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
   };
 }

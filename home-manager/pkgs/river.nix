@@ -12,8 +12,12 @@ with pkgs;
   wofi
   wttrbar
 
-  # wayfire
   swayidle
   river
   rivercarro
+
+  xdg-desktop-portal-wlr
+  xdg-desktop-portal-gtk
+
+  wlr-randr
 ]

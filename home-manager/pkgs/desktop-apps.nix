@@ -19,7 +19,7 @@ with pkgs;
   obs-studio
   obsidian
   rquickshare
-  spot
+  spotify
   texmaker
   thunderbird
   tmux
