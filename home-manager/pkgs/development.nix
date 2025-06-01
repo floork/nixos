@@ -90,6 +90,9 @@ let
 
     # Tex
     texlab
+
+    # zig
+    zls
   ];
 in
 
