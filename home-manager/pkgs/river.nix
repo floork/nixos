@@ -14,6 +14,7 @@ with pkgs;
   swaylock
 
   # Notifications
+  libnotify
   mako
 
   # Screenshot Tools
