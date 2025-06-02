@@ -12,6 +12,7 @@ with pkgs;
   # Lockscreen and Idle Management
   swayidle
   swaylock
+  wlopm
 
   # Notifications
   libnotify
