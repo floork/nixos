@@ -18,6 +18,9 @@ let
 
 in
 {
+  home.stateVersion = "24.11";
+  home.username = "floork";
+  home.homeDirectory = "/home/floork";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -42,7 +45,7 @@ in
     gtk.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 16;
+    size = 12;
   };
   gtk = {
     enable = true;

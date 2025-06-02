@@ -15,7 +15,6 @@ with pkgs;
   tree
   gh
   htop-vim
-  neofetch
   pkg-config
   tldr
   unrar
@@ -24,7 +23,4 @@ with pkgs;
   vim
   wget
   xorg.xev
-  xorg.xhost
-  zsh-autosuggestions
-  zsh-syntax-highlighting
 ]

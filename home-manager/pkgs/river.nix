@@ -2,22 +2,40 @@
 
 with pkgs;
 [
-  dunst
-  grim
-  custom.grimblast
-  slurp
-  custom.pyprland
-  waybar
-  wl-clipboard
-  wofi
-  wttrbar
+  # Display Management
+  wlr-randr
 
-  swayidle
+  # Wayland Compositors
   river
   rivercarro
 
+  # Lockscreen and Idle Management
+  swayidle
+  swaylock
+
+  # Notifications
+  mako
+
+  # Screenshot Tools
+  grim
+  custom.grimblast
+  slurp
+
+  # Clipboard Management
+  cliphist
+  wl-clipboard
+
+  # Application Launchers
+  wofi
+
+  # Bars and Widgets
+  waybar
+  wttrbar
+
+  # Wayland Portals
   xdg-desktop-portal-wlr
   xdg-desktop-portal-gtk
 
-  wlr-randr
+  # Custom Utilities
+  custom.pyprland
 ]

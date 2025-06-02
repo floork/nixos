@@ -9,6 +9,7 @@ let
     gnumake
     ninja
     meson
+    gcc
 
     # JavaScript / TypeScript
     yarn
@@ -52,6 +53,9 @@ let
     binutils
     openssl
     libiconv
+
+    # SqLite
+    sqlite
 
     # Zig
     zig

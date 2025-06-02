@@ -21,16 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hypridle = {
-      url = "github:hyprwm/hypridle";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser.url = "github:youwen5/zen-browser-flake";
     pyprland.url = "github:hyprland-community/pyprland";
 
@@ -70,7 +60,6 @@
           modules = [
             ./system/${systemFile}
             {
-              programs.hyprland.enable = true;
               programs.river.enable = true;
             }
             home-manager.nixosModules.home-manager
@@ -80,6 +69,9 @@
               home-manager.users.${user} = import ./home-manager/${homeFile};
               home-manager.extraSpecialArgs = {
                 inherit inputs system hostRole;
+                username = user;
+                homeDirectory = "/home/${user}";
+                stateVersion = nixVer;
               };
             }
             { system.stateVersion = nixVer; }
@@ -93,7 +85,7 @@
           role = "desktop";
           user = "floork";
           systemFile = "desktop.nix";
-          homeFile = "personal.nix";
+          homeFile = "home.nix";
         };
 
         laptop = mkHost {
@@ -101,7 +93,7 @@
           role = "laptop";
           user = "floork";
           systemFile = "laptop.nix";
-          homeFile = "personal.nix";
+          homeFile = "home.nix";
         };
 
         work = mkHost {
@@ -109,7 +101,7 @@
           role = "work";
           user = "flmr799e";
           systemFile = "work.nix";
-          homeFile = "work.nix";
+          homeFile = "home.nix";
         };
       };
     };
