@@ -3,6 +3,7 @@
 with pkgs;
 [
   custom.zenBrowser
+  custom.swww
 
   chromium
   element-desktop

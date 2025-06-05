@@ -24,6 +24,8 @@
     zen-browser.url = "github:youwen5/zen-browser-flake";
     pyprland.url = "github:hyprland-community/pyprland";
 
+    swww.url = "github:LGFae/swww";
+
     # wezterm = {
     #   url = "github:wez/wezterm?dir=nix";
     #   inputs.nixpkgs.follows = "nixpkgs";

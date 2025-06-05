@@ -4,6 +4,7 @@ with pkgs;
 [
   # Display Management
   wlr-randr
+  way-displays
 
   # Wayland Compositors
   river
