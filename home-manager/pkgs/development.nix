@@ -4,6 +4,9 @@ with pkgs;
 
 let
   tools = [
+    # debugger
+    lldb
+
     # C/C++
     cmake
     gnumake
