@@ -22,6 +22,7 @@ with pkgs;
   openssl.dev
   p7zip
   pavucontrol
+  pinentry
   playerctl
   qjackctl
   translate-shell

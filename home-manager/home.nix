@@ -24,6 +24,35 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+programs.gpg = {
+    enable = true;
+    package = pkgs.gnupg;
+    homedir = "${config.home.homeDirectory}/.gnupg";
+    mutableKeys = true;
+    mutableTrust = true;
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    extraConfig = ''
+      # Changed this line to point to the graphical pinentry:
+      pinentry-program ${pkgs.pinentry-gtk2}/bin/pinentry-gtk-2
+      # You might not need pinentry-tty/ttyname with graphical pinentry,
+      # but keeping them won't hurt. You can remove them if it works without.
+      # pinentry-tty ${builtins.getEnv "TTY"} # Usually not needed for graphical
+      # ttyname ${builtins.getEnv "TTY"}       # Usually not needed for graphical
+
+      allow-loopback-pinentry
+      # allow-emacs-pinentry # Keep if you use Emacs' built-in GPG features
+
+      default-cache-ttl 600
+      max-cache-ttl 7200
+      default-cache-ttl-ssh 600
+      max-cache-ttl-ssh 7200
+    '';
+  };
+
   home.sessionVariables = {
     EDITOR = "nvim";
     XDG_CURRENT_DESKTOP = "wlroots";

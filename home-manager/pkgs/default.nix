@@ -22,7 +22,6 @@ let
   desktopPkgs = import ./desktop-apps.nix { inherit pkgs custom; };
   devPkgs = import ./development.nix { inherit pkgs; };
   hwPkgs = import ./hardware-info.nix { inherit pkgs; };
-  miscPkgs = import ./misc.nix { inherit pkgs; };
 
   laptopOnlyPkgs =
     if hostRole == "laptop" then import ./laptop-pkgs.nix { inherit pkgs inputs system; } else [ ];
@@ -40,7 +39,6 @@ lib.concatLists [
   desktopPkgs
   devPkgs
   hwPkgs
-  miscPkgs
   laptopOnlyPkgs
   desktopOnlyPkgs
 ]
