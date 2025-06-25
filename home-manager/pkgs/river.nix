@@ -5,6 +5,7 @@ with pkgs;
   # Display Management
   wlr-randr
   way-displays
+  wdisplays
 
   # Wayland Compositors
   river
@@ -41,4 +42,7 @@ with pkgs;
 
   # Custom Utilities
   custom.pyprland
+
+  hyprlock
+  hypridle
 ]

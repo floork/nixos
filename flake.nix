@@ -63,6 +63,7 @@
             ./system/${systemFile}
             {
               programs.river.enable = true;
+              programs.hyprland.enable = true;
             }
             home-manager.nixosModules.home-manager
             {
